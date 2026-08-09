@@ -1,0 +1,80 @@
+Aqui estão as análises e respostas para cada uma das questões propostas:
+
+**Lista 47261**
+1. A tabela-verdade apresenta resultado 1 (verdadeiro) quando pelo menos uma das entradas é 1, o que define a operação de Disjunção (OR). **Resposta: A**
+2. O operador lógico que executa uma ação quando pelo menos uma condição é verdadeira é o operador OR. **Resposta: C**
+3. A conjunção "E" (AND), que resulta em verdadeiro apenas se todas as condições forem verdadeiras, é representada em C pelo operador `&&`. **Resposta: B**
+4. Na linguagem C, a variável para armazenar números de ponto flutuante deve ser declarada como `float`. **Resposta: E**
+5. O código possui um erro de sintaxe na linha do `scanf` (`letra.num` em vez de `&letra, &num`), o que impede a compilação. **Resposta: C**
+6. A variável `num` é do tipo `int`, mas as funções de leitura e impressão estão usando o formato `%f` (ponto flutuante). Ambas deveriam usar `%d`. **Resposta: C**
+7. O código está correto e fará a leitura adequada dos dados informados, imprimindo a letra 'j' e o inteiro 5. **Resposta: A**
+8. O operador utilizado para aumentar o valor de uma variável em 1 de forma eficiente é o operador de incremento. **Resposta: E**
+9. A expressão `a!=b` avalia se 3 é diferente de 2, o que é verdadeiro (1). Logo, `c` recebe 1. Os valores finais são 3, 2, 1. **Resposta: A**
+10. Os lados são 10, 11 e 11. O primeiro `se` falha, mas o `senão` com a condição `lado_b == lado_c` (11 == 11) é verdadeiro, imprimindo "Caso 2". **Resposta: B**
+
+**Lista 47262**
+1. O comando `break` em um `switch` encerra a estrutura e passa o fluxo de controle para o próximo comando após o fim do `switch`. **Resposta: D**
+2. A função `scanf` requer o endereço de memória da variável onde o valor lido será armazenado (usando o operador `&`). **Resposta: E**
+3. O comando `break` é usado para evitar que a execução continue (fall-through) para os próximos cases em um switch-case. **Resposta: A**
+4. As instruções I (operador ternário), II (if-else) e III (if-else if) são válidas e exibem a frase. A IV é inválida na linguagem C. **Resposta: B**
+5. A lógica pede para incrementar `x` se for maior que 0 e decrementar se for menor que 0, o que corresponde a `if(x>0) x++; if(x<0) x--;`. **Resposta: A**
+
+**Lista 47263**
+1. O laço começa em 15 e vai decrementando até 4. O número de repetições é 15 - 4 + 1 = 12. **Resposta: A**
+2. I (V), II (V), III (V) estão corretas. IV é falsa, pois o `while` executa enquanto a condição for verdadeira. **Resposta: A**
+3. O `for` é indicado para repetições conhecidas, o `while` testa a condição no início e o `do...while` garante a execução ao menos uma vez. **Resposta: A**
+4. O código soma os números pares digitados: 2 + 4 + 8 = 14. **Resposta: A**
+
+**Lista 47264**
+1. O vetor é usado para rastrear a frequência, armazenando inteiros até o fim da análise. **Resposta: B**
+2. Vetores permitem armazenamento temporário antes da transferência para bancos de dados, e programadores devem manipular matrizes. **Resposta: A**
+3. A busca sequencial começa no índice 0 e percorre enquanto não achar o valor e o índice for menor que 10. **Resposta: A**
+4. O vetor oferece uma maneira de manusear os dados, armazena valores reais (notas) e calcula a média. **Resposta: B**
+5. O trecho correto usa o laço de 0 a 15, lê o caractere com `&` e verifica a condição com `==` e operador `||`. **Resposta: A**
+6. Vetores e matrizes são estruturas homogêneas acessadas por índices (1 para vetor, 2 para matriz). Afirmações III e IV estão corretas. **Resposta: A**
+7. Para analisar o desempenho, é necessário armazenar as notas em um vetor (I) e calcular a média (II). Matrizes não são necessárias. **Resposta: A**
+8. As notas devem ser inseridas em um vetor (I) e a média calculada (II). Matrizes são desnecessárias (III). **Resposta: A**
+9. O programa lê até um marcador (I) e usa um vetor para armazenar contagens inteiras (III). Matrizes não são necessárias (II). **Resposta: C**
+10. Basta 1 vetor de 40 posições para os resultados sorteados e 2 variáveis para processar as apostas de cada jogador individualmente. **Resposta: D**
+
+```json
+{
+  "47261": {
+    "1": "A",
+    "2": "C",
+    "3": "B",
+    "4": "E",
+    "5": "C",
+    "6": "C",
+    "7": "A",
+    "8": "E",
+    "9": "A",
+    "10": "B"
+  },
+  "47262": {
+    "1": "D",
+    "2": "E",
+    "3": "A",
+    "4": "B",
+    "5": "A"
+  },
+  "47263": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "A"
+  },
+  "47264": {
+    "1": "B",
+    "2": "A",
+    "3": "A",
+    "4": "B",
+    "5": "A",
+    "6": "A",
+    "7": "A",
+    "8": "A",
+    "9": "C",
+    "10": "D"
+  }
+}
+```
