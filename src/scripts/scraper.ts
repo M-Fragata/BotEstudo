@@ -477,7 +477,7 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
                                 }
                                 const alvo = melhorEl || document.body;
                                 const clone = alvo.cloneNode(true) as HTMLElement;
-                                clone.querySelectorAll('script, style, noscript').forEach(el => el.remove());
+                                clone.querySelectorAll('script, style, noscript').forEach((el: Element) => el.remove());
                                 return clone.innerHTML;
                             });
                             const textoLimpo = conteudoPagina.replace(/<[^>]*>/g, '').trim();
