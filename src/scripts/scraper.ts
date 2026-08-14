@@ -1,4 +1,5 @@
-import { chromium, Page } from 'playwright';
+import { chromium } from 'playwright';
+import type { Page } from 'playwright';
 import { htmlToMarkdown } from '../utils/turndown.js';
 import fs from 'fs';
 import path from 'path';
@@ -223,7 +224,7 @@ async function extrairDisciplinas(page: Page) {
         return [];
     const rawData = await page.evaluate(() => {
         const cards = document.querySelectorAll('[data-testid^="card-disciplina-v2-"]');
-        const data = [];
+        const data: Array<{testId: string, titulo: string, widgetConteudo: string, widgetExercicio: string, widgetSimulado: string, valor: string, botaoAcessar: boolean}> = [];
         cards.forEach((card) => {
             data.push({
                 testId: card.getAttribute('data-testid') || '',
@@ -421,7 +422,7 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
                         await page.goto(temaInfo.urlBase, { waitUntil: 'networkidle', timeout: 15000 });
                         await page.waitForTimeout(2000);
                         const clicouTema = await page.evaluate((temaId: string) => {
-                            const btn = document.querySelector(`[data-testid="card-sucesso-botao"][data-info="${temaId}"]`);
+                            const btn = document.querySelector<HTMLElement>(`[data-testid="card-sucesso-botao"][data-info="${temaId}"]`);
                             if (!btn)
                                 return false;
                             btn.click();
@@ -456,7 +457,7 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
                             const conteudoPagina = await frame.evaluate(() => {
                                 document.querySelectorAll('script, style, noscript').forEach(el => el.remove());
                                 document.querySelectorAll('nav, aside, header, [role="navigation"], .sidebar').forEach(el => {
-                                    el.style.display = 'none';
+                                    (el as HTMLElement).style.display = 'none';
                                 });
                                 let melhorEl = null;
                                 for (const sel of [
@@ -475,7 +476,7 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
                                     }
                                 }
                                 const alvo = melhorEl || document.body;
-                                const clone = alvo.cloneNode(true);
+                                const clone = alvo.cloneNode(true) as HTMLElement;
                                 clone.querySelectorAll('script, style, noscript').forEach(el => el.remove());
                                 return clone.innerHTML;
                             });
@@ -658,7 +659,7 @@ async function esperarTimerEConcluir(page: Page) {
         await page.waitForTimeout(restante * 1000);
     }
     const clicou = await page.evaluate(() => {
-        const btn = document.querySelector('[data-element="button_marcar-como-concluido"]');
+        const btn = document.querySelector<HTMLButtonElement>('[data-element="button_marcar-como-concluido"]');
         if (btn && !btn.disabled) {
             btn.click();
             return true;
@@ -716,7 +717,7 @@ async function clicarNaListaExercicio(page: Page, listaId: string, urlBase: stri
     await page.goto(urlBase, { waitUntil: 'networkidle', timeout: 15000 });
     await page.waitForTimeout(2000);
     const clicou = await page.evaluate((id: string) => {
-        const btn = document.querySelector(`[data-testid="card-sucesso-botao"][data-info="${id}"]`);
+        const btn = document.querySelector<HTMLElement>(`[data-testid="card-sucesso-botao"][data-info="${id}"]`);
         if (!btn)
             return false;
         btn.click();
@@ -995,13 +996,13 @@ export async function enviarRespostasExercicios(page: Page, disciplina: any, res
                     console.log(`    ⚠️ Questão ${numero} não encontrada (${questoesLive.length} questões na página)`);
                     continue;
                 }
-                const alternativa = questao.alternativas.find(a => a.letra === letra);
+                const alternativa = questao.alternativas.find((a: any) => a.letra === letra);
                 if (!alternativa) {
                     console.log(`    ⚠️ Alternativa ${letra} não encontrada na questão ${numero}`);
                     continue;
                 }
                 const selecionou = await page.evaluate((hash: string) => {
-                    const btn = document.querySelector(`[data-testid="alternative-${hash}"]`);
+                    const btn = document.querySelector<HTMLElement>(`[data-testid="alternative-${hash}"]`);
                     if (btn) {
                         btn.click();
                         return true;
@@ -1017,7 +1018,7 @@ export async function enviarRespostasExercicios(page: Page, disciplina: any, res
                 await page.waitForTimeout(2000);
             }
             const finalizou = await page.evaluate(() => {
-                const btn = document.querySelector('[data-element="button_finalizar-prova"]');
+                const btn = document.querySelector<HTMLButtonElement>('[data-element="button_finalizar-prova"]');
                 if (btn && !btn.disabled) {
                     btn.click();
                     return true;
@@ -1028,7 +1029,7 @@ export async function enviarRespostasExercicios(page: Page, disciplina: any, res
                 try {
                     await page.waitForSelector('[data-testid="submit-button"]', { timeout: 5000 });
                     await page.evaluate(() => {
-                        const btn = document.querySelector('[data-testid="submit-button"]');
+                        const btn = document.querySelector<HTMLElement>('[data-testid="submit-button"]');
                         if (btn)
                             btn.click();
                     });
