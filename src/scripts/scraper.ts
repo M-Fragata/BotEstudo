@@ -182,6 +182,7 @@ async function lidarComDialogosPosLogin(page: Page) {
     }
 }
 
+
 async function navegarParaDisciplinas(page: Page) {
     const rotas = [
         '/disciplinas',
@@ -189,8 +190,8 @@ async function navegarParaDisciplinas(page: Page) {
 
     for (const rota of rotas) {
         try {
-            await page.goto(`https://estudante.estacio.br${rota}`, { waitUntil: 'networkidle', timeout: 10000 });
-            await page.waitForTimeout(2000);
+            await page.goto(`https://estudante.estacio.br${rota}`, { waitUntil: 'networkidle', timeout: 15000 });
+            await page.waitForTimeout(3000);
 
             const temDisciplinas = await page.evaluate(() => {
                 const textos = document.body.innerText.toLowerCase();
@@ -202,12 +203,18 @@ async function navegarParaDisciplinas(page: Page) {
                 return;
             }
         }
-        catch {
+        catch (err) {
+            console.log(`  ⚠️ Erro ao acessar ${rota}: ${err instanceof Error ? err.message : err}`);
             continue;
         }
     }
-    await page.goto('https://estudante.estacio.br/', { waitUntil: 'networkidle' });
-    await page.waitForTimeout(2000);
+    // Fallback: tentar página inicial
+    try {
+        await page.goto('https://estudante.estacio.br/', { waitUntil: 'networkidle', timeout: 15000 });
+        await page.waitForTimeout(3000);
+    } catch (err) {
+        console.log(`  ⚠️ Erro ao acessar página inicial: ${err instanceof Error ? err.message : err}`);
+    }
 }
 
 async function extrairDisciplinas(page: Page) {
@@ -376,7 +383,7 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
 
         let pagina = 1;
         let temMais = true;
-        while (temMais && pagina <= 20) {
+        while (temMais) {
             console.log(`  📄 Página ${pagina} da lista de temas...`);
             const temasPagina = await page.evaluate(() => {
                 const temas: any[] = [];
@@ -392,12 +399,15 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
                         const ariaLabel = botaoAcessar?.getAttribute('aria-label') || '';
                         const tagEl = card.querySelector('[data-testid="card-tag"]');
                         const status = tagEl?.getAttribute('aria-label') || tagEl?.textContent?.trim() || '';
+                        const itensMatch = subtitulo.match(/(\d+)\s*Itens?/i);
+                        const itens = itensMatch && itensMatch[1] ? parseInt(itensMatch[1]) : 1;
                         if (titulo && temaId) {
                             temas.push({
                                 titulo: `${subtitulo} - ${titulo}`.trim(),
                                 temaId,
                                 status,
                                 ariaLabel,
+                                itens,
                                 urlBase: window.location.href
                             });
                         }
@@ -408,6 +418,10 @@ async function extrairConteudoDisciplina(page: Page, disciplina: any): Promise<a
             });
             console.log(`    🔗 ${temasPagina.length} temas encontrados nesta página`);
             for (const temaInfo of temasPagina) {
+                if (temaInfo.itens > 1) {
+                    console.log(`      ⏭️ Pulando tema "${temaInfo.titulo}" (contém ${temaInfo.itens} itens)`);
+                    continue;
+                }
                 let temasBemSucedidos = false;
                 for (let tentativa = 1; tentativa <= MAX_TENTATIVAS; tentativa++) {
                     if (temasBemSucedidos)
@@ -808,6 +822,36 @@ async function salvarExerciciosJSON(listas: any[], nomeArquivo: string) {
     console.log(`  💾 Exercícios salvos em: ${caminho}`);
 }
 
+async function salvarConteudosMD(temas: any[], nomeArquivo: string) {
+    const dir = path.join(process.cwd(), 'resumos', 'firstPeriod', 'raw');
+    fs.mkdirSync(dir, { recursive: true });
+    const caminho = path.join(dir, `${nomeArquivo}-conteudos.md`);
+    let md = '';
+    temas.forEach((tema, i) => {
+        md += `# ${i + 1}. ${tema.titulo}\n\n`;
+        if (tema.conteudos && tema.conteudos.length > 0) {
+            tema.conteudos.forEach((c: any) => {
+                md += `## ${c.titulo}\n\n`;
+                md += `${c.conteudoExtraido}\n\n`;
+            });
+        }
+    });
+    fs.writeFileSync(caminho, md);
+    console.log(`  💾 Conteúdos salvos em: ${caminho}`);
+}
+
+async function salvarRespostasJSON(respostas: unknown, nomeArquivo: string) {
+    const dir = path.join(process.cwd(), 'resumos', 'firstPeriod', 'raw');
+    fs.mkdirSync(dir, { recursive: true });
+    const caminho = path.join(dir, `${nomeArquivo}-respostas.json`);
+    fs.writeFileSync(caminho, JSON.stringify(respostas, null, 2));
+    console.log(`  💾 Respostas salvas em: ${caminho}`);
+}
+
+function nomeArquivoDisciplina(nome: string): string {
+    return nome.replace(/[\\/:*?"<>|]/g, '-');
+}
+
 async function processarExerciciosBatch(page: Page, disciplina: any): Promise<any[]> {
     const listasComQuestoes: any[] = [];
     const urlBase = page.url();
@@ -1108,37 +1152,43 @@ export async function loginAndScrape(user: string, pass: string): Promise<string
             return 'Todas as disciplinas já estão completas!';
         }
 
-        // Processar TODAS as disciplinas pendentes
-        for (let i = 0; i < disciplinasPendentes.length; i++) {
-            const disciplina = disciplinasPendentes[i]!;
-            console.log(`🔍 Processando disciplina ${i + 1}/${disciplinasPendentes.length}: ${disciplina.nome} (${disciplina.progressoConteudo}, ${disciplina.porcentagem}%)`);
+        // Processar apenas a primeira disciplina pendente
+        const disciplina = disciplinasPendentes[0]!;
+        console.log(`🔍 Processando disciplina: ${disciplina.nome} (${disciplina.progressoConteudo}, ${disciplina.porcentagem}%)`);
 
-            console.log('🔗 Extraindo URL ID da disciplina...');
-            const urlId = await extrairUrlId(page, disciplina);
-            if (!urlId) {
-                console.log(`⚠️ Não foi possível obter URL ID para: ${disciplina.nome}. Pulando...`);
-                continue;
+        console.log('🔗 Extraindo URL ID da disciplina...');
+        const urlId = await extrairUrlId(page, disciplina);
+        if (!urlId) {
+            console.log(`⚠️ Não foi possível obter URL ID para: ${disciplina.nome}.`);
+            return `Não foi possível obter URL ID para: ${disciplina.nome}.`;
+        }
+
+        disciplina.urlId = urlId;
+
+        // Extrair conteúdo
+        const temas = await extrairConteudoDisciplina(page, disciplina);
+        if (temas.length > 0) {
+            await salvarConteudosMD(temas, nomeArquivoDisciplina(disciplina.nome));
+        }
+
+        // Extrair e processar exercícios
+        const listasComQuestoes = await processarExercicios(page, disciplina);
+        await salvarExerciciosJSON(listasComQuestoes, `${nomeArquivoDisciplina(disciplina.nome)}-exercicios.json`);
+
+        if (listasComQuestoes.length > 0) {
+            console.log('🤖 Analisando exercícios com a LLM...');
+            const respostas = await analisarExercicios(listasComQuestoes);
+            await salvarRespostasJSON(respostas ?? {}, nomeArquivoDisciplina(disciplina.nome));
+            if (respostas) {
+                await enviarRespostasExercicios(page, disciplina, respostas);
             }
-
-            disciplina.urlId = urlId;
-
-            // Extrair conteúdo
-            await extrairConteudoDisciplina(page, disciplina);
-
-            // Extrair e processar exercícios
-            await processarExercicios(page, disciplina);
-
-            console.log(`✅ Disciplina ${disciplina.nome} concluída!`);
-
-            // Voltar para lista de disciplinas se não for a última
-            if (i < disciplinasPendentes.length - 1) {
-                await page.goto('https://estudante.estacio.br/disciplinas', { waitUntil: 'networkidle', timeout: 15000 });
-                await page.waitForTimeout(3000);
-                await closeTaciaModal(page);
+            else {
+                await salvarPedidoAjuda(listasComQuestoes, disciplina.nome, 'LLM não retornou JSON de respostas');
             }
         }
 
-        return 'Todas as disciplinas pendentes processadas com sucesso!';
+        console.log(`✅ Disciplina ${disciplina.nome} concluída!`);
+        return `Disciplina ${disciplina.nome} processada com sucesso!`;
 
     } catch (error) {
         console.error('❌ Erro no scraping:', error);
