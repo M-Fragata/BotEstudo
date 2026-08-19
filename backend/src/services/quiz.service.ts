@@ -1,4 +1,5 @@
 import { prisma } from "../utils/prisma.ts"
+import { Prisma } from "../generated/prisma/client.ts"
 import { AppError } from "../utils/errors.ts"
 import { generateQuestions } from "./ai.service.ts"
 import type { AnswerInput, GenerateQuizInput } from "../schemas/quiz.schema.ts"
@@ -79,6 +80,88 @@ export async function generateQuiz(userId: string, input: GenerateQuizInput) {
   })
 }
 
+export async function startDisciplineQuiz(userId: string, disciplineId: string, limite = 10) {
+  const discipline = await prisma.discipline.findFirst({
+    where: { id: disciplineId, userId },
+    select: { id: true, name: true }
+  })
+
+  if (!discipline) {
+    throw new AppError(404, "Disciplina não encontrada")
+  }
+
+  const candidatas = await prisma.question.findMany({
+    where: { quiz: { disciplineId, userId } },
+    select: { id: true, prompt: true }
+  })
+
+  if (candidatas.length === 0) {
+    throw new AppError(404, "Esta disciplina ainda não tem questões. Gere um simulado antes de iniciar.")
+  }
+
+  const porPrompt = new Map<string, string>()
+  for (const q of candidatas) {
+    const chave = q.prompt.trim().replace(/\s+/g, " ")
+    if (!porPrompt.has(chave)) porPrompt.set(chave, q.id)
+  }
+
+  const ids = embaralhar([...porPrompt.values()]).slice(0, limite)
+
+  const questoes = await prisma.question.findMany({
+    where: { id: { in: ids } },
+    select: { prompt: true, context: true, options: true, correctOptionId: true }
+  })
+
+  return prisma.$transaction(async (tx) => {
+    const quiz = await tx.quiz.create({
+      data: { userId, disciplineId, title: discipline.name }
+    })
+
+    await tx.question.createMany({
+      data: questoes.map((q, index) => ({
+        quizId: quiz.id,
+        position: index + 1,
+        prompt: q.prompt,
+        context: q.context ?? null,
+        options: q.options as Prisma.InputJsonValue,
+        correctOptionId: q.correctOptionId
+      }))
+    })
+
+    const questions = await tx.question.findMany({
+      where: { quizId: quiz.id },
+      orderBy: { position: "asc" },
+      select: {
+        id: true,
+        position: true,
+        prompt: true,
+        context: true,
+        options: true
+      }
+    })
+
+    const session = await tx.quizSession.create({
+      data: { userId, quizId: quiz.id, currentIndex: 0 }
+    })
+
+    return { id: quiz.id, title: quiz.title, questions, sessionId: session.id }
+  })
+}
+
+function embaralhar<T>(itens: T[]): T[] {
+  const copia = [...itens]
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const a: T | undefined = copia[i]
+    const b: T | undefined = copia[j]
+    if (a !== undefined && b !== undefined) {
+      copia[i] = b
+      copia[j] = a
+    }
+  }
+  return copia
+}
+
 export async function createSession(userId: string, quizId: string) {
   const quiz = await prisma.quiz.findFirst({
     where: { id: quizId, userId },
@@ -140,6 +223,11 @@ export async function answerQuestion(userId: string, sessionId: string, input: A
       selectedOptionId: input.selectedOptionId,
       isCorrect
     }
+  })
+
+  await prisma.question.update({
+    where: { id: question.id },
+    data: { lastAnswerCorrect: isCorrect }
   })
 
   return { questionId: question.id, isCorrect: answer.isCorrect }

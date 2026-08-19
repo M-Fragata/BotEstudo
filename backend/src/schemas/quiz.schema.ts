@@ -15,6 +15,10 @@ export const answerSchema = z.object({
   selectedOptionId: z.string().min(1)
 })
 
+export const answerStandaloneSchema = z.object({
+  selectedOptionId: z.string().min(1, "Alternativa obrigatória")
+})
+
 export type CreateSessionInput = z.infer<typeof createSessionSchema>
 export type GenerateQuizInput = z.infer<typeof generateQuizSchema>
 export type AnswerInput = z.infer<typeof answerSchema>

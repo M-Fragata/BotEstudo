@@ -5,10 +5,23 @@ import { TopBar, MobileNav } from '../components/Nav'
 import { Icon } from '../components/Icon'
 import { Button } from '../components/Button'
 import { api } from '../api/client'
-import type { QuizNavState } from '../api/client'
 
 type UploadMethod = 'pdf' | 'text'
 const ACCEPTED = '.pdf,application/pdf'
+const LIMITE_CARACTERES = 15000
+
+function contaChars(s: string): number {
+  return s.replace(/\s/g, '').length
+}
+
+function cortarNoLimite(s: string): string {
+  let usados = 0
+  for (let i = 0; i < s.length; i++) {
+    if (!/\s/.test(s[i])) usados++
+    if (usados > LIMITE_CARACTERES) return s.slice(0, i)
+  }
+  return s
+}
 
 export function GerarQuestoesPage() {
   const navigate = useNavigate()
@@ -31,7 +44,7 @@ export function GerarQuestoesPage() {
     try {
       const text = await file.text()
       setFileName(file.name)
-      setContent(text)
+      setContent(cortarNoLimite(text.trim()))
       setError('')
     } catch {
       setFileName(file.name)
@@ -65,19 +78,12 @@ export function GerarQuestoesPage() {
         title: discipline.trim(),
         content: content.trim(),
       })
-      const quiz = await api.generateQuiz({
+      await api.generateQuiz({
         disciplineId: created.id,
         materialId: material.id,
         questionCount: 30,
       })
-      const session = await api.createSession(quiz.id)
-      const state: QuizNavState = {
-        quizId: quiz.id,
-        sessionId: session.sessionId,
-        title: quiz.title,
-        questions: quiz.questions,
-      }
-      navigate('/simulado', { state })
+      navigate(`/disciplina/${created.id}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Erro ao gerar o simulado.')
     } finally {
@@ -198,10 +204,22 @@ export function GerarQuestoesPage() {
                   id="material-text"
                   placeholder="Cole seu resumo ou notas de estudo aqui..."
                   value={content}
-                  onChange={(e) => setContent(e.target.value)}
+                  onChange={(e) => setContent(cortarNoLimite(e.target.value))}
                   disabled={busy}
                 />
               )}
+            </div>
+            <div className="flex items-center justify-between mt-2">
+              <span className="font-caption text-caption text-on-surface-variant">
+                {method === 'pdf'
+                  ? contaChars(content) >= LIMITE_CARACTERES
+                    ? 'Arquivo muito longo — apenas os primeiros 15.000 caracteres foram usados.'
+                    : 'Os primeiros 15.000 caracteres do arquivo serão usados.'
+                  : 'Serão usados até 15.000 caracteres do texto.'}
+              </span>
+              <span className="font-caption text-caption text-on-surface-variant tabular-nums">
+                {contaChars(content).toLocaleString('pt-BR')} / {LIMITE_CARACTERES.toLocaleString('pt-BR')}
+              </span>
             </div>
             <input
               ref={fileInputRef}

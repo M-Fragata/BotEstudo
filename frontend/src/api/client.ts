@@ -95,6 +95,27 @@ export const api = {
     })
   },
 
+  getDiscipline(id: string) {
+    return request<DisciplineDetail>(`/disciplines/${id}`)
+  },
+
+  startDisciplineQuiz(disciplineId: string) {
+    return request<DisciplineSimulado>(`/disciplines/${disciplineId}/simulado`, {
+      method: 'POST',
+    })
+  },
+
+  getQuestion(id: string) {
+    return request<QuestionDetail>(`/questions/${id}`)
+  },
+
+  answerStandalone(questionId: string, selectedOptionId: string) {
+    return request<StandaloneAnswerResult>(`/questions/${questionId}/answer`, {
+      method: 'POST',
+      body: JSON.stringify({ selectedOptionId }),
+    })
+  },
+
   createMaterial(input: { disciplineId: string; title: string; content?: string }) {
     return request<{ id: string }>('/materials', {
       method: 'POST',
@@ -140,6 +161,34 @@ export interface Discipline {
   retention: number
 }
 
+export interface DisciplineQuestion {
+  id: string
+  position: number
+  prompt: string
+  lastAnswerCorrect: boolean | null
+}
+
+export interface DisciplineDetail extends Discipline {
+  createdAt: string
+  questions: DisciplineQuestion[]
+}
+
+export interface QuestionDetail {
+  id: string
+  position: number
+  prompt: string
+  context: string | null
+  options: QuestionOption[]
+  lastAnswerCorrect: boolean | null
+  discipline: { id: string; name: string }
+}
+
+export interface StandaloneAnswerResult {
+  questionId: string
+  isCorrect: boolean
+  correctOptionId: string
+}
+
 export interface QuestionOption {
   id: string
   text: string
@@ -157,6 +206,10 @@ export interface GeneratedQuiz {
   id: string
   title: string
   questions: QuizQuestion[]
+}
+
+export interface DisciplineSimulado extends GeneratedQuiz {
+  sessionId: string
 }
 
 export interface SessionMeta {

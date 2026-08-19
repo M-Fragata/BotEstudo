@@ -1,4 +1,5 @@
 import z from "zod"
+import { zodToJsonSchema } from "zod-to-json-schema"
 import { chamarLLM, extrairJSON } from "../utils/nvidiaLLM.ts"
 import { AppError } from "../utils/errors.ts"
 
@@ -40,8 +41,13 @@ const questionSchema = z
 
 const responseSchema = z.array(questionSchema).min(1).max(MAX_QUESTIONS);
 
+const responseJsonSchema = zodToJsonSchema(responseSchema as never, {
+  name: "resposta",
+  target: "openAi"
+});
+
 function montarPrompt(input: AiGenerationInput, quantidade: number): string {
-  const conteudo = (input.content ?? "").slice(0, 6000) || input.title;
+  const conteudo = (input.content ?? "").slice(0, 15000) || input.title;
 
   return `Crie ${quantidade} questões de múltipla escolha sobre o tema "${input.title}".
 
@@ -72,19 +78,59 @@ Regras:
 - As questões devem ser todas diferentes entre si e nenhuma deve repetir conteúdo já usado neste simulado.`;
 }
 
-async function gerarBloco(input: AiGenerationInput, quantidade: number): Promise<GeneratedQuestion[]> {
-  const resposta = await chamarLLM(montarPrompt(input, quantidade), SYSTEM_PROMPT);
+function normalizarQuestao(questao: unknown): unknown {
+  if (typeof questao !== "object" || questao === null || Array.isArray(questao)) return questao;
+  const q = questao as Record<string, unknown>;
+
+  const options = Array.isArray(q.options)
+    ? q.options.map((op) => {
+        if (typeof op !== "object" || op === null) return op;
+        const o = op as Record<string, unknown>;
+        return {
+          ...o,
+          id: typeof o.id === "string" ? o.id.toLowerCase().trim() : o.id,
+          text: typeof o.text === "string" ? o.text.trim() : o.text
+        };
+      })
+    : q.options;
+
+  return {
+    ...q,
+    prompt: typeof q.prompt === "string" ? q.prompt.trim() : q.prompt,
+    context: typeof q.context === "string" && q.context.trim() ? q.context.trim() : undefined,
+    correctOptionId:
+      typeof q.correctOptionId === "string" ? q.correctOptionId.toLowerCase().trim() : q.correctOptionId,
+    options
+  };
+}
+
+function normalizarResposta(bruta: unknown): unknown {
+  if (!Array.isArray(bruta)) return bruta;
+  return bruta.map(normalizarQuestao);
+}
+
+async function tentarGerarBloco(
+  input: AiGenerationInput,
+  quantidade: number,
+  comSchema: boolean
+): Promise<GeneratedQuestion[] | null> {
+  const resposta = await chamarLLM(
+    montarPrompt(input, quantidade),
+    SYSTEM_PROMPT,
+    comSchema ? responseJsonSchema : undefined
+  );
 
   let parsed: unknown;
   try {
     parsed = extrairJSON(resposta);
   } catch {
-    throw new AppError(502, "Resposta da IA inválida. Tente novamente.");
+    return null;
   }
 
-  const result = responseSchema.safeParse(parsed);
+  const result = responseSchema.safeParse(normalizarResposta(parsed));
   if (!result.success) {
-    throw new AppError(502, "A IA não retornou questões no formato esperado. Tente novamente.");
+    console.error(`[IA] Resposta fora do formato esperado (${quantidade} questões):`, result.error.issues.slice(0, 5));
+    return null;
   }
 
   return result.data.map((question) => ({
@@ -93,6 +139,22 @@ async function gerarBloco(input: AiGenerationInput, quantidade: number): Promise
     correctOptionId: question.correctOptionId,
     ...(question.context ? { context: question.context } : {})
   }));
+}
+
+async function gerarBloco(input: AiGenerationInput, quantidade: number): Promise<GeneratedQuestion[]> {
+  try {
+    const comSchema = await tentarGerarBloco(input, quantidade, true);
+    if (comSchema) return comSchema;
+
+    console.warn(`[IA] Fallback: tentando ${quantidade} questões sem schema guiado...`);
+    const semSchema = await tentarGerarBloco(input, quantidade, false);
+    if (semSchema) return semSchema;
+  } catch (err) {
+    console.error(`[IA] Falha ao gerar bloco de ${quantidade} questões:`, err);
+    throw new AppError(502, "Não foi possível gerar as questões com a IA. Tente novamente.");
+  }
+
+  throw new AppError(502, "A IA não retornou questões no formato esperado. Tente novamente.");
 }
 
 export async function generateQuestions(input: AiGenerationInput): Promise<GeneratedQuestion[]> {

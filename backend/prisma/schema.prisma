@@ -88,15 +88,16 @@ model Quiz {
 }
 
 model Question {
-  id              String       @id @default(cuid())
-  quizId          String
-  position        Int          @default(1)
-  prompt          String       @db.Text
-  context         String?      @db.Text
-  options         Json
-  correctOptionId String
-  quiz            Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
-  answers         UserAnswer[]
+  id                String       @id @default(cuid())
+  quizId            String
+  position          Int          @default(1)
+  prompt            String       @db.Text
+  context           String?      @db.Text
+  options           Json
+  correctOptionId   String
+  lastAnswerCorrect Boolean?
+  quiz              Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers           UserAnswer[]
 
   @@index([quizId])
 }

@@ -7,6 +7,8 @@ import { SimuladoPage } from './pages/SimuladoPage'
 import { ResultadoPage } from './pages/ResultadoPage'
 import { GerarQuestoesPage } from './pages/GerarQuestoesPage'
 import { ProfilePage } from './pages/ProfilePage'
+import { DisciplinaPage } from './pages/DisciplinaPage'
+import { QuestaoPage } from './pages/QuestaoPage'
 import type { ReactNode } from 'react'
 
 function ProtectedRoute({ children }: { children: ReactNode }) {
@@ -75,6 +77,22 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <ProfilePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/disciplina/:id"
+        element={
+          <ProtectedRoute>
+            <DisciplinaPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/questao/:id"
+        element={
+          <ProtectedRoute>
+            <QuestaoPage />
           </ProtectedRoute>
         }
       />

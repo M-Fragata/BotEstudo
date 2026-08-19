@@ -6,6 +6,7 @@ import { CircularProgress } from '../components/CircularProgress'
 import { Chip } from '../components/Chip'
 import { ResultCard } from '../components/ResultCard'
 import { Button } from '../components/Button'
+import { Skeleton, SkeletonCircle } from '../components/Skeleton'
 import { api } from '../api/client'
 import { Logo } from '../components/Logo'
 import type { QuizResult, ResultNavState } from '../api/client'
@@ -36,6 +37,7 @@ export function ResultadoPage() {
   const navState = (location.state ?? null) as ResultNavState | null
   const [result, setResult] = useState<QuizResult | null>(navState?.result ?? null)
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     document.title = 'Resultado do Simulado | Lumina Learn'
@@ -47,10 +49,12 @@ export function ResultadoPage() {
       navigate('/', { replace: true })
       return
     }
+    setLoading(true)
     api
       .sessionResult(navState.sessionId)
       .then(setResult)
       .catch((err) => setError(err instanceof Error ? err.message : 'Erro ao carregar resultado'))
+      .finally(() => setLoading(false))
   }, [navState, result, navigate])
 
   return (
@@ -74,6 +78,15 @@ export function ResultadoPage() {
           <p className="font-body-md text-body-md text-error bg-error/10 rounded-xl p-stack-md mb-stack-lg" role="alert">
             {error}
           </p>
+        ) : null}
+
+        {loading && !error ? (
+          <GlassCard className="relative overflow-hidden p-stack-lg flex flex-col items-center text-center mb-stack-lg max-w-2xl mx-auto">
+            <Skeleton className="h-8 w-64 mb-stack-sm" />
+            <Skeleton className="h-4 w-48 mb-stack-md" />
+            <SkeletonCircle className="w-40 h-40 mb-stack-md" />
+            <Skeleton className="h-6 w-56 rounded-full" />
+          </GlassCard>
         ) : null}
 
         {result ? (

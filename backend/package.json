@@ -28,7 +28,8 @@
     "playwright": "^1.61.1",
     "telegraf": "^4.16.3",
     "turndown": "^7.2.4",
-    "zod": "^4.4.3"
+    "zod": "^4.4.3",
+    "zod-to-json-schema": "^3.25.2"
   },
   "devDependencies": {
     "@types/bcryptjs": "^3.0.0",

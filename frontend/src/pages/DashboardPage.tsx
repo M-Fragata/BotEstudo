@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { TopBar, MobileNav } from '../components/Nav'
 import { GlassCard } from '../components/GlassCard'
 import { ProgressBar } from '../components/ProgressBar'
 import { StatCard } from '../components/StatCard'
 import { SubjectCard } from '../components/SubjectCard'
+import { Skeleton, SkeletonText } from '../components/Skeleton'
 import { api } from '../api/client'
 import { useAuth } from '../auth/useAuth'
 import type { ApiUser } from '../api/client'
 import type { Subject } from '../types'
-import type { QuizNavState } from '../api/client'
 
 function mapDiscipline(d: {
   id: string
@@ -40,12 +39,11 @@ function mapDiscipline(d: {
 }
 
 export function DashboardPage() {
-  const navigate = useNavigate()
   const { user } = useAuth()
   const [stats, setStats] = useState<{ weeklyProgress: number; questionsAnswered: number; studyTime: string } | null>(null)
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [error, setError] = useState('')
-  const [busy, setBusy] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     api
@@ -55,27 +53,8 @@ export function DashboardPage() {
         setSubjects(res.disciplines.map(mapDiscipline))
       })
       .catch((err) => setError(err instanceof Error ? err.message : 'Erro ao carregar dados'))
+      .finally(() => setLoading(false))
   }, [])
-
-  const handleSubjectAction = async (subject: Subject) => {
-    if (busy) return
-    setBusy(true)
-    try {
-      const quiz = await api.generateQuiz({ disciplineId: subject.id, questionCount: 30 })
-      const session = await api.createSession(quiz.id)
-      const state: QuizNavState = {
-        quizId: quiz.id,
-        sessionId: session.sessionId,
-        title: quiz.title,
-        questions: quiz.questions,
-      }
-      navigate('/simulado', { state })
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Erro ao gerar simulado')
-    } finally {
-      setBusy(false)
-    }
-  }
 
   const displayName = (user: ApiUser | null): string => {
     if (user?.name) return user.name.split(' ')[0]
@@ -108,29 +87,45 @@ export function DashboardPage() {
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl" />
             <div className="relative z-10">
-              <div className="flex justify-between items-center mb-stack-md">
-                <h2 className="font-display text-headline-md text-on-background">
-                  Progresso Semanal
-                </h2>
-                <span className="font-label-bold text-label-bold text-primary bg-primary-container/20 px-stack-sm py-1 rounded-full">
-                  {stats ? `${stats.weeklyProgress}%` : '--'}
-                </span>
-              </div>
-              <ProgressBar value={stats?.weeklyProgress ?? 0} className="mb-stack-md" />
-              <div className="flex justify-between gap-stack-sm">
-                <StatCard
-                  icon="quiz"
-                  value={stats ? stats.questionsAnswered.toString() : '--'}
-                  label="Questões"
-                  tone="secondary"
-                />
-                <StatCard
-                  icon="timer"
-                  value={stats?.studyTime ?? '--'}
-                  label="Tempo Estudo"
-                  tone="tertiary"
-                />
-              </div>
+              {loading ? (
+                <div className="flex flex-col gap-stack-md">
+                  <div className="flex justify-between items-center">
+                    <Skeleton className="h-6 w-40" />
+                    <Skeleton className="h-6 w-16 rounded-full" />
+                  </div>
+                  <Skeleton className="h-3 w-full" />
+                  <div className="flex justify-between gap-stack-sm">
+                    <Skeleton className="h-16 w-1/3 rounded-xl" />
+                    <Skeleton className="h-16 w-1/3 rounded-xl" />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="flex justify-between items-center mb-stack-md">
+                    <h2 className="font-display text-headline-md text-on-background">
+                      Progresso Semanal
+                    </h2>
+                    <span className="font-label-bold text-label-bold text-primary bg-primary-container/20 px-stack-sm py-1 rounded-full">
+                      {stats ? `${stats.weeklyProgress}%` : '--'}
+                    </span>
+                  </div>
+                  <ProgressBar value={stats?.weeklyProgress ?? 0} className="mb-stack-md" />
+                  <div className="flex justify-between gap-stack-sm">
+                    <StatCard
+                      icon="quiz"
+                      value={stats ? stats.questionsAnswered.toString() : '--'}
+                      label="Questões"
+                      tone="secondary"
+                    />
+                    <StatCard
+                      icon="timer"
+                      value={stats?.studyTime ?? '--'}
+                      label="Tempo Estudo"
+                      tone="tertiary"
+                    />
+                  </div>
+                </>
+              )}
             </div>
           </GlassCard>
 
@@ -155,17 +150,33 @@ export function DashboardPage() {
               Ver todas
             </a>
           </div>
-          {subjects.length === 0 && !error ? (
-            <p className="font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest rounded-2xl p-stack-md border border-outline-variant/30">
-              Você ainda não tem disciplinas. Acesse "Practice" no menu para criar um simulado a
-              partir de um material.
-            </p>
-          ) : null}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {subjects.map((subject) => (
-              <SubjectCard key={subject.id} subject={subject} onAction={handleSubjectAction} />
-            ))}
-          </div>
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+              {Array.from({ length: 3 }, (_, i) => (
+                <div
+                  key={i}
+                  className="glass-card rounded-2xl p-stack-md border border-outline-variant/30 flex flex-col gap-stack-sm"
+                >
+                  <Skeleton className="h-4 w-3/4" />
+                  <Skeleton className="h-3 w-1/2" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              {subjects.length === 0 && !error ? (
+                <p className="font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest rounded-2xl p-stack-md border border-outline-variant/30">
+                  Você ainda não tem disciplinas. Acesse "Practice" no menu para criar um simulado a
+                  partir de um material.
+                </p>
+              ) : null}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                {subjects.map((subject) => (
+                  <SubjectCard key={subject.id} subject={subject} />
+                ))}
+              </div>
+            </>
+          )}
         </section>
       </main>
 

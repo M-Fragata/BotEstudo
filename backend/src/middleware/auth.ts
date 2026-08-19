@@ -11,6 +11,7 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
   const header = req.headers.authorization
 
   if (!header?.startsWith("Bearer ")) {
+    console.warn(`[Auth] Token não fornecido em ${req.method} ${req.originalUrl}`)
     res.status(401).json({ error: "Token não fornecido" })
     return
   }
@@ -20,6 +21,7 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
     req.user = { id: payload.sub, email: payload.email }
     next()
   } catch {
+    console.warn(`[Auth] Token inválido ou expirado em ${req.method} ${req.originalUrl}`)
     res.status(401).json({ error: "Token inválido ou expirado" })
   }
 }
