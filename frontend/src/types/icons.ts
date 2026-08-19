@@ -30,3 +30,4 @@ export type IconName =
   | 'refresh'
   | 'close'
   | 'logout'
+  | 'play_arrow'

@@ -103,7 +103,7 @@ export function DisciplinaPage() {
                 <Skeleton className="h-8 w-64" />
                 <Skeleton className="h-4 w-44" />
               </div>
-              <Button variant="gradient" leadingIcon="play_arrow" disabled>
+              <Button variant="gradient" disabled>
                 Iniciar Simulado
               </Button>
             </section>
@@ -142,7 +142,6 @@ export function DisciplinaPage() {
               </div>
               <Button
                 variant="gradient"
-                leadingIcon="play_arrow"
                 onClick={() => void handleIniciarSimulado()}
                 disabled={busy || discipline.questions.length === 0}
               >

@@ -37,7 +37,7 @@ export function ResultadoPage() {
   const navState = (location.state ?? null) as ResultNavState | null
   const [result, setResult] = useState<QuizResult | null>(navState?.result ?? null)
   const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(!navState?.result)
 
   useEffect(() => {
     document.title = 'Resultado do Simulado | Lumina Learn'
@@ -49,7 +49,6 @@ export function ResultadoPage() {
       navigate('/', { replace: true })
       return
     }
-    setLoading(true)
     api
       .sessionResult(navState.sessionId)
       .then(setResult)

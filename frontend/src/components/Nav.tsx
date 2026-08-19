@@ -12,7 +12,6 @@ const navItems: NavItem[] = [
   { label: 'Home', path: '/', icon: 'dashboard' },
   { label: 'Subjects', path: '/', icon: 'menu_book' },
   { label: 'Practice', path: '/gerar', icon: 'quiz' },
-  { label: 'Profile', path: '/perfil', icon: 'person' },
 ]
 
 export function TopBar() {
