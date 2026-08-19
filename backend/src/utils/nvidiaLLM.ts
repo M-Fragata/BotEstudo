@@ -1,9 +1,11 @@
 const MODELOS = [
-  'z-ai/glm-5.2',
-  'deepseek-ai/deepseek-v4-flash',
   'nvidia/nemotron-3-super-120b-a12b',
-  'deepseek-ai/deepseek-v4-pro',
+  'nvidia/llama-3.3-nemotron-super-49b-v1',
   'nvidia/nemotron-3-ultra-550b-a55b',
+  'openai/gpt-oss-20b',
+  'deepseek-ai/deepseek-v4-flash-0731',
+  'z-ai/glm-5.2',
+  'nvidia/nemotron-3-nano-30b-a3b',
 ];
 const BACKOFF_MS = [5000, 10000, 15000, 20000, 30000];
 const LLM_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
