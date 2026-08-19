@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0052ff;
+  --color-primary-container: #0040cc;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #fefcff;
+  --color-secondary: #ffc700;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #8455ef;
+  --color-on-secondary-container: #fffbff;
+  --color-tertiary: #10b981;
+  --color-tertiary-container: #00873b;
+  --color-on-tertiary-container: #f7fff3;
+  --color-error: #f43f5e;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-background: #f8fafc;
+  --color-on-background: #191b23;
+  --color-surface: #ffffff;
+  --color-on-surface: #191b23;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f3fd;
+  --color-surface-container: #ecedf7;
+  --color-surface-container-high: #e6e7f2;
+  --color-surface-variant: #e2e8f0;
+  --color-on-surface-variant: #424754;
+  --color-outline: #cbd5e1;
+  --color-outline-variant: #cbd5e1;
+  --color-surface-dim: #d8d9e3;
+  --color-primary-fixed: #d8e2ff;
+  --color-primary-fixed-dim: #adc6ff;
+  --color-secondary-fixed: #e9ddff;
+  --color-secondary-fixed-dim: #d0bcff;
+  --color-on-secondary-fixed: #23005c;
+
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-label-bold: 14px;
+  --text-label-bold--line-height: 20px;
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg-mobile: 32px;
+  --text-display-lg-mobile--line-height: 40px;
+  --text-display-lg-mobile--letter-spacing: -0.02em;
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lift: 0 12px 30px rgba(0, 82, 255, 0.1);
+  --shadow-glow: 0 8px 24px rgba(0, 82, 255, 0.3);
+  --shadow-modal: 0 20px 50px rgba(0, 0, 0, 0.15);
+  --shadow-bar: 0 -4px 20px rgba(0, 0, 0, 0.05);
+
+  --spacing-container-padding-mobile: 1.25rem;
+  --spacing-container-padding-desktop: 2.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-margin-desktop: 3rem;
+  --spacing-stack-sm: 0.5rem;
+  --spacing-stack-md: 1rem;
+  --spacing-stack-lg: 2rem;
+  --spacing-gutter: 1.5rem;
+  --spacing-base: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glass-card {
+  background: var(--color-surface-container-lowest);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+}
+
+.glass-card-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glass-card-hover:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+.gradient-bg {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(0, 82, 255, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(255, 199, 0, 0.15) 0%, transparent 60%);
+}
+
+.color-bg {
+  background:
+    radial-gradient(ellipse at top left, rgba(0, 82, 255, 0.15), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(255, 199, 0, 0.15), transparent 60%);
+}
+
+@keyframes confetti-fall {
+  from {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  top: -5%;
+  width: 8px;
+  height: 12px;
+  pointer-events: none;
+  animation: confetti-fall 2.5s linear forwards;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
