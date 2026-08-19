@@ -2,7 +2,7 @@ import { prisma } from "../utils/prisma.ts"
 import { Prisma } from "../generated/prisma/client.ts"
 import { AppError } from "../utils/errors.ts"
 import { generateQuestions } from "./ai.service.ts"
-import type { AnswerInput, GenerateQuizInput } from "../schemas/quiz.schema.ts"
+import type { AnswerInput, AnswersInput, GenerateQuizInput } from "../schemas/quiz.schema.ts"
 
 export interface QuizListItem {
   id: string
@@ -231,6 +231,62 @@ export async function answerQuestion(userId: string, sessionId: string, input: A
   })
 
   return { questionId: question.id, isCorrect: answer.isCorrect }
+}
+
+export async function answerBatch(userId: string, sessionId: string, input: AnswersInput) {
+  const session = await prisma.quizSession.findFirst({
+    where: { id: sessionId, userId },
+    include: { quiz: { include: { questions: { select: { id: true, correctOptionId: true } } } } }
+  })
+
+  if (!session) {
+    throw new AppError(404, "Sessão não encontrada")
+  }
+
+  if (session.finishedAt) {
+    throw new AppError(409, "Sessão já finalizada")
+  }
+
+  const porQuestao = new Map<string, string>()
+  for (const a of input.answers) {
+    if (session.quiz.questions.some((q) => q.id === a.questionId)) {
+      porQuestao.set(a.questionId, a.selectedOptionId)
+    }
+  }
+
+  if (porQuestao.size === 0) {
+    return { answered: 0 }
+  }
+
+  await prisma.$transaction(async (tx) => {
+    for (const [questionId, selectedOptionId] of porQuestao) {
+      const question = session.quiz.questions.find((q) => q.id === questionId)
+      if (!question) continue
+
+      const isCorrect = question.correctOptionId === selectedOptionId
+
+      await tx.userAnswer.upsert({
+        where: { sessionId_questionId: { sessionId, questionId } },
+        create: {
+          sessionId,
+          questionId,
+          selectedOptionId,
+          isCorrect
+        },
+        update: {
+          selectedOptionId,
+          isCorrect
+        }
+      })
+
+      await tx.question.update({
+        where: { id: questionId },
+        data: { lastAnswerCorrect: isCorrect }
+      })
+    }
+  })
+
+  return { answered: porQuestao.size }
 }
 
 export async function finishSession(userId: string, sessionId: string) {

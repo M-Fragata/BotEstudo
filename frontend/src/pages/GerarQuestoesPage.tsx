@@ -102,7 +102,7 @@ export function GerarQuestoesPage() {
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant">
             Transforme seus materiais de estudo em testes dinâmicos com a inteligência artificial
-            do Lumina Learn.
+            do Fragata Quiz.
           </p>
         </section>
 

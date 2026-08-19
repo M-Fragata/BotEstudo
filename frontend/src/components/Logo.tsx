@@ -14,7 +14,7 @@ export function Logo({ to = '/', dark = false }: LogoProps) {
       </span>
       {dark ? null : (
         <span className="font-display font-extrabold text-headline-md tracking-tight">
-          Lumina Learn
+          Fragata Quiz
         </span>
       )}
     </Link>

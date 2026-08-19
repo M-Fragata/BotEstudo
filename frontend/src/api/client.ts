@@ -144,6 +144,13 @@ export const api = {
     })
   },
 
+  answerBatch(sessionId: string, answers: Array<{ questionId: string; selectedOptionId: string }>) {
+    return request<{ answered: number }>(`/sessions/${sessionId}/answers`, {
+      method: 'POST',
+      body: JSON.stringify({ answers }),
+    })
+  },
+
   finishSession(sessionId: string) {
     return request<QuizResult>('/sessions/' + sessionId + '/finish', { method: 'POST' })
   },

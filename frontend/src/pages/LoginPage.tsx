@@ -47,7 +47,7 @@ export function LoginPage() {
             <Icon name="school" filled className="text-on-primary text-display-lg-mobile" />
           </span>
           <h1 className="font-display text-display-lg-mobile text-primary tracking-tight">
-            Lumina Learn
+            Fragata Quiz
           </h1>
           <p className="font-body-md text-body-md text-on-surface-variant mt-stack-sm">
             Acesse sua jornada de aprendizado

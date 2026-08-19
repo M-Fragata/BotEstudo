@@ -1,9 +1,10 @@
 import { Router } from "express"
 import { validateBody, validateParams } from "../middleware/validate.ts"
 import { authMiddleware } from "../middleware/auth.ts"
-import { answerSchema, createSessionSchema } from "../schemas/quiz.schema.ts"
+import { answerSchema, answersSchema, createSessionSchema } from "../schemas/quiz.schema.ts"
 import { idParamsSchema } from "../schemas/discipline.schema.ts"
 import {
+  answerBatch,
   answerQuestion,
   createSession,
   finishSession,
@@ -32,6 +33,17 @@ sessionRoutes.post(
   async (req, res) => {
     const { id } = req.params as { id: string }
     const result = await answerQuestion(req.user!.id, id, req.body)
+    res.json(result)
+  }
+)
+
+sessionRoutes.post(
+  "/:id/answers",
+  validateParams(idParamsSchema),
+  validateBody(answersSchema),
+  async (req, res) => {
+    const { id } = req.params as { id: string }
+    const result = await answerBatch(req.user!.id, id, req.body)
     res.json(result)
   }
 )

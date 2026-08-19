@@ -29,7 +29,6 @@ export function SimuladoPage() {
   const [error, setError] = useState('')
 
   const finishedRef = useRef(false)
-  const pendingSubmitRef = useRef<Promise<unknown> | null>(null)
 
   useEffect(() => {
     if (!quiz) {
@@ -44,26 +43,11 @@ export function SimuladoPage() {
     return () => clearInterval(timer)
   }, [])
 
-  const submitAnswer = useCallback(
-    (questionId: string, optionId: string) => {
-      if (!quiz || finishedRef.current) return
-      const p = api.answerQuestion(quiz.sessionId, questionId, optionId).catch(() => {
-        // falha de rede no envio da resposta: segue com a sessão
-      })
-      pendingSubmitRef.current = p
-      void p.finally(() => {
-        if (pendingSubmitRef.current === p) pendingSubmitRef.current = null
-      })
-    },
-    [quiz],
-  )
-
   const handleSelect = useCallback(
     (questionId: string, optionId: string) => {
       setAnswers((prev) => ({ ...prev, [questionId]: optionId }))
-      submitAnswer(questionId, optionId)
     },
-    [submitAnswer],
+    [],
   )
 
   const handleFinish = useCallback(async () => {
@@ -71,11 +55,16 @@ export function SimuladoPage() {
     finishedRef.current = true
     setSubmitting(true)
 
-    if (pendingSubmitRef.current) {
-      await pendingSubmitRef.current
-    }
-
     try {
+      const submitted = Object.entries(answers).map(([questionId, selectedOptionId]) => ({
+        questionId,
+        selectedOptionId,
+      }))
+      if (submitted.length > 0) {
+        await api.answerBatch(quiz.sessionId, submitted).catch(() => {
+          // falha de rede no envio das respostas: segue com a finalização
+        })
+      }
       const result = await api.finishSession(quiz.sessionId)
       navigate('/resultado', { state: { sessionId: quiz.sessionId, result } })
     } catch (err) {
@@ -83,7 +72,7 @@ export function SimuladoPage() {
       finishedRef.current = false
       setSubmitting(false)
     }
-  }, [quiz, navigate])
+  }, [quiz, navigate, answers])
 
   useEffect(() => {
     if (secondsLeft === 0) {
@@ -103,6 +92,7 @@ export function SimuladoPage() {
 
   const progress = ((index + 1) / quiz.questions.length) * 100
   const lowTime = secondsLeft <= 60
+  const allAnswered = quiz.questions.every((q) => answers[q.id])
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -131,9 +121,8 @@ export function SimuladoPage() {
               Questão {index + 1} de {quiz.questions.length}
             </span>
             <span
-              className={`font-caption text-caption px-2 py-1 rounded-full flex items-center gap-1 ${
-                lowTime ? 'bg-error/15 text-error' : 'bg-secondary-container/20 text-[#B8860B]'
-              }`}
+              className={`font-caption text-caption px-2 py-1 rounded-full flex items-center gap-1 ${lowTime ? 'bg-error/15 text-error' : 'bg-secondary-container/20 text-[#B8860B]'
+                }`}
             >
               <span className="material-symbols-outlined" style={{ fontSize: 14 }}>
                 timer
@@ -159,7 +148,7 @@ export function SimuladoPage() {
           </p>
         ) : null}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-stack-md pb-stack-lg">
+        <div className="flex flex-col gap-stack-md pb-stack-lg">
           {current.options.map((option: Option, i) => (
             <QuestionOption
               key={option.id}
@@ -184,37 +173,26 @@ export function SimuladoPage() {
           </span>{' '}
           Anterior
         </button>
-        {index < quiz.questions.length - 1 ? (
-          <button
-            type="button"
-            onClick={() => setIndex((i) => Math.min(quiz.questions.length - 1, i + 1))}
-            className="flex-1 bg-primary-container text-on-primary font-label-bold text-label-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-[0_4px_12px_rgba(0,82,255,0.4)] max-w-[180px]"
-          >
-            Próxima{' '}
-            <span className="material-symbols-outlined" style={{ fontSize: 20 }}>
-              arrow_forward
-            </span>
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={() => void handleFinish()}
-            disabled={submitting}
-            className="flex-1 bg-primary font-label-bold text-label-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-glow max-w-[180px] text-on-primary disabled:opacity-60"
-          >
-            {submitting ? 'Enviando...' : 'Ver Resultado'}
-          </button>
-        )}
         <button
           type="button"
           onClick={() => void handleFinish()}
           disabled={submitting}
-          className="flex-1 bg-secondary text-on-secondary font-label-bold text-label-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-[0_4px_12px_rgba(255,199,0,0.4)] max-w-[200px] disabled:opacity-50"
+          className={`${allAnswered ? 'flex' : 'hidden'} flex-1 bg-secondary text-on-secondary font-label-bold text-label-bold py-3 rounded-lg items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-[0_4px_12px_rgba(255,199,0,0.4)] max-w-[200px] disabled:opacity-50`}
         >
           <span className="material-symbols-outlined" style={{ fontSize: 20 }}>
             flag
           </span>{' '}
           Finalizar
+        </button>
+        <button
+          type="button"
+          onClick={() => setIndex((i) => Math.min(quiz.questions.length - 1, i + 1))}
+          className="flex-1 bg-primary-container text-on-primary font-label-bold text-label-bold py-3 rounded-lg flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-[0_4px_12px_rgba(0,82,255,0.4)] max-w-[180px]"
+        >
+          Próxima{' '}
+          <span className="material-symbols-outlined" style={{ fontSize: 20 }}>
+            arrow_forward
+          </span>
         </button>
       </footer>
     </div>

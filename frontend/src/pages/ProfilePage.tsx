@@ -57,7 +57,7 @@ export function ProfilePage() {
                 </span>
               </span>
               <div>
-                <div className="font-label-bold text-label-bold text-on-surface">Lumina Learn</div>
+                <div className="font-label-bold text-label-bold text-on-surface">Fragata Quiz</div>
                 <div className="font-caption text-caption text-on-surface-variant">
                   Smart AI Study Simulator
                 </div>

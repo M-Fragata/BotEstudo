@@ -40,7 +40,7 @@ export function ResultadoPage() {
   const [loading, setLoading] = useState(!navState?.result)
 
   useEffect(() => {
-    document.title = 'Resultado do Simulado | Lumina Learn'
+    document.title = 'Resultado do Simulado | Fragata Quiz'
   }, [])
 
   useEffect(() => {
