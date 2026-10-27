@@ -6,6 +6,8 @@ import path from 'path';
 import { config } from 'dotenv';
 import { chamarLLM, extrairJSON } from '../utils/nvidiaLLM.js';
 config();
+config({ path: path.join(import.meta.dirname, '..', '..', '..', '.env') });
+config({ path: path.join(import.meta.dirname, '..', '..', '.env') });
 
 const RESUMOS_DIR = path.join(import.meta.dirname, '..', '..', 'resumos', 'firstPeriod', 'raw');
 
@@ -747,6 +749,7 @@ async function salvarConteudosMD(temas: any[], nomeArquivo: string) {
     const dir = RESUMOS_DIR;
     fs.mkdirSync(dir, { recursive: true });
     const caminho = path.join(dir, `${nomeArquivo}-conteudos.md`);
+    const caminhoPrincipal = path.join(dir, `${nomeArquivo}.MD`);
     let md = '';
     temas.forEach((tema, i) => {
         md += `# ${i + 1}. ${tema.titulo}\n\n`;
@@ -758,7 +761,49 @@ async function salvarConteudosMD(temas: any[], nomeArquivo: string) {
         }
     });
     fs.writeFileSync(caminho, md);
-    console.log(`  💾 Conteúdos salvos em: ${caminho}`);
+    fs.writeFileSync(caminhoPrincipal, md);
+    console.log(`  💾 Conteúdos salvos em: ${caminho} e ${caminhoPrincipal}`);
+}
+
+async function aguardarArquivoRespostas(page: Page, respostasPath: string, timeoutMinutos: number = 20): Promise<Record<string, Record<number, string>> | null> {
+    const inicio = Date.now();
+    const timeoutMs = timeoutMinutos * 60 * 1000;
+    console.log(`\n======================================================`);
+    console.log(`⏳ AGUARDANDO RESPOSTAS DO ASSISTENTE / IA`);
+    console.log(`📁 Arquivo esperado: ${respostasPath}`);
+    console.log(`⏱️ Tempo limite: ${timeoutMinutos} minutos`);
+    console.log(`💡 O assistente pode gerar o JSON diretamente neste caminho`);
+    console.log(`======================================================\n`);
+
+    let ultimoAviso = 0;
+    while (Date.now() - inicio < timeoutMs) {
+        if (fs.existsSync(respostasPath)) {
+            try {
+                const conteudo = fs.readFileSync(respostasPath, 'utf-8').trim();
+                if (conteudo) {
+                    const parsed = JSON.parse(conteudo);
+                    if (parsed && typeof parsed === 'object' && Object.keys(parsed).length > 0) {
+                        console.log(`\n🎉 Respostas encontradas em ${respostasPath}!`);
+                        return parsed as Record<string, Record<number, string>>;
+                    }
+                }
+            } catch {
+                // Arquivo pode estar sendo escrito no momento, aguarda próxima iteração
+            }
+        }
+
+        const decorridoSegundos = Math.floor((Date.now() - inicio) / 1000);
+        if (decorridoSegundos - ultimoAviso >= 15) {
+            ultimoAviso = decorridoSegundos;
+            const restanteMin = Math.ceil((timeoutMs - (Date.now() - inicio)) / 60000);
+            console.log(`⏳ Aguardando criação de ${path.basename(respostasPath)}... (${decorridoSegundos}s decorridos, restante ~${restanteMin}m)`);
+        }
+
+        await page.waitForTimeout(2000);
+    }
+
+    console.log(`❌ Tempo limite de ${timeoutMinutos}m excedido aguardando o arquivo de respostas.`);
+    return null;
 }
 
 async function salvarRespostasJSON(respostas: unknown, nomeArquivo: string) {
@@ -1097,14 +1142,23 @@ export async function loginAndScrape(user: string, pass: string): Promise<string
         await salvarExerciciosJSON(listasComQuestoes, `${nomeArquivoDisciplina(disciplina.nome)}-exercicios.json`);
 
         if (listasComQuestoes.length > 0) {
-            console.log('🤖 Analisando exercícios com a LLM...');
-            const respostas = await analisarExercicios(listasComQuestoes);
-            await salvarRespostasJSON(respostas ?? {}, nomeArquivoDisciplina(disciplina.nome));
+            const respostasPath = path.join(RESUMOS_DIR, `${nomeArquivoDisciplina(disciplina.nome)}-respostas.json`);
+
+            // Remove respostas anteriores para garantir que aguarde o novo arquivo
+            if (fs.existsSync(respostasPath)) {
+                try {
+                    fs.unlinkSync(respostasPath);
+                } catch { }
+            }
+
+            console.log('🤖 Aguardando análise dos exercícios pelo assistente...');
+            const respostas = await aguardarArquivoRespostas(page, respostasPath, 20);
+
             if (respostas) {
                 await enviarRespostasExercicios(page, disciplina, respostas);
             }
             else {
-                await salvarPedidoAjuda(listasComQuestoes, disciplina.nome, 'LLM não retornou JSON de respostas');
+                await salvarPedidoAjuda(listasComQuestoes, disciplina.nome, 'Arquivo de respostas não foi gerado a tempo');
             }
         }
 
