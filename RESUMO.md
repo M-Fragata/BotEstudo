@@ -19,7 +19,7 @@ resumos/
 ### 1. Rodar o Bot
 
 ```bash
-cd cd D:\Estudo\BotEstudo
+cd D:\\Estudo\\BotEstudo
 npm run build && npm run start
 ```
 
