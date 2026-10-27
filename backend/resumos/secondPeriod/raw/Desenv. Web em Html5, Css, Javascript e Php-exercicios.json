@@ -1,0 +1,1786 @@
+[
+  {
+    "titulo": "O Ambiente Web Cliente X Servidor e as T...",
+    "tema": "Tema 2",
+    "listaId": "00172",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "(CEFET-MG/2021 - Adaptada) A comunicação na internet acontece principalmente através do modelo requisição e resposta. Sobre o modelo de rede cliente-servidor, é correto afirmar que:\nOs dados são armazenados em poderosos computadores chamados servidores.\nOs computadores clientes são mantidos em locais chamados centro de dados.\nO modelo é considerado obsoleto, sendo pouco utilizado atualmente.\nO cliente recebe requisições, executa o trabalho solicitado e envia a resposta.\nO modelo depende da utilização de uma VPN para ser considerado viável.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Os dados são armazenados em poderosos computadores chamados servidores.",
+            "hash": "65b124ad9ca9510b17826d4e"
+          },
+          {
+            "letra": "B",
+            "texto": "Os computadores clientes são mantidos em locais chamados centro de dados.",
+            "hash": "65b124ad9ca9510b17826d4f"
+          },
+          {
+            "letra": "C",
+            "texto": "O modelo é considerado obsoleto, sendo pouco utilizado atualmente.",
+            "hash": "65b124ad9ca9510b17826d50"
+          },
+          {
+            "letra": "D",
+            "texto": "O cliente recebe requisições, executa o trabalho solicitado e envia a resposta.",
+            "hash": "65b124ad9ca9510b17826d51"
+          },
+          {
+            "letra": "E",
+            "texto": "O modelo depende da utilização de uma VPN para ser considerado viável.",
+            "hash": "65b124ad9ca9510b17826d52"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "(Instituto Consulplan/2021 - Adaptada) Os padrões arquiteturais de software estão ligados a aspectos amplos sobre o funcionamento e a operação da aplicação. Dessa forma, envolve fatores como: hardware, disponibilidade, tecnologias de comunicação, portabilidade e riscos. Analise a imagem a seguir:\n\nTrata-se da seguinte arquitetura de software:\nPipeline.\nPeer to Peer.\nCliente-Servidor.\nMVC (Model-View-Controller).\nMestre-escravo.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Pipeline.",
+            "hash": "65ea0a219f4d340057923430"
+          },
+          {
+            "letra": "B",
+            "texto": "Peer to Peer.",
+            "hash": "65ea0a219f4d340057923431"
+          },
+          {
+            "letra": "C",
+            "texto": "Cliente-Servidor.",
+            "hash": "65ea0a219f4d340057923432"
+          },
+          {
+            "letra": "D",
+            "texto": "MVC (Model-View-Controller).",
+            "hash": "65ea0a219f4d340057923433"
+          },
+          {
+            "letra": "E",
+            "texto": "Mestre-escravo.",
+            "hash": "65ea0a219f4d340057923434"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "(OBJETIVA/2021) Conforme Bonatti, sobre tecnologias e linguagens utilizadas na construção de websites, numere a 2ª coluna de acordo com a 1ª e, após, assinale a alternativa que apresenta a sequência correta:\n\n(1) CSS.\n(2) PHP.\n(3) HTML.\n\n( ) É uma linguagem de programação open source, que é interpretada pelo servidor, muito utilizada para o desenvolvimento de aplicações voltadas para a internet.\n( ) Serve para promover o acabamento visual das páginas web. Pode ser compartilhado entre várias páginas, permitindo, assim, uma padronização visual muito simplificada e lógica.\n( ) É uma linguagem de marcação, que é interpretada pelo browser para dar formatação e posicionamento ao conteúdo do website.\n1 - 2 - 3.\n3 - 2 - 1.\n2 - 3 - 1.\n2 - 1 - 3.\n3 - 1 - 2.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "1 - 2 - 3.",
+            "hash": "65b13b0355fefcc52fd6858d"
+          },
+          {
+            "letra": "B",
+            "texto": "3 - 2 - 1.",
+            "hash": "65b13b0355fefcc52fd6858e"
+          },
+          {
+            "letra": "C",
+            "texto": "2 - 3 - 1.",
+            "hash": "65b13b0355fefcc52fd6858f"
+          },
+          {
+            "letra": "D",
+            "texto": "2 - 1 - 3.",
+            "hash": "65b13b0355fefcc52fd68590"
+          },
+          {
+            "letra": "E",
+            "texto": "3 - 1 - 2.",
+            "hash": "65b13b0355fefcc52fd68591"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "Sobre as formas de acesso a dados, é correto afirmar:\nA forma mais rápida para acesso a dados é fazendo uso unicamente de HTML.\nUm SGDB é capaz de recuperar dados e exibi-los diretamente no navegador.\nUma linguagem de programação server side, como o PHP, possui componentes próprios capazes de armazenar e recuperar dados.\nO Javascript possui uma estrutura própria para armazenamento e recuperação de dados, que pode substituir os bancos de dados tradicionais.\nÉ possível recuperar dados utilizando HTML, através de formulários, ou Javascript, através de APIs. Em ambos os casos é necessária ainda uma linguagem server side.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "A forma mais rápida para acesso a dados é fazendo uso unicamente de HTML.",
+            "hash": "65c42af5a74f64d9f1724915"
+          },
+          {
+            "letra": "B",
+            "texto": "Um SGDB é capaz de recuperar dados e exibi-los diretamente no navegador.",
+            "hash": "65c42af5a74f64d9f1724916"
+          },
+          {
+            "letra": "C",
+            "texto": "Uma linguagem de programação server side, como o PHP, possui componentes próprios capazes de armazenar e recuperar dados.",
+            "hash": "65c42af5a74f64d9f1724917"
+          },
+          {
+            "letra": "D",
+            "texto": "O Javascript possui uma estrutura própria para armazenamento e recuperação de dados, que pode substituir os bancos de dados tradicionais.",
+            "hash": "65c42af5a74f64d9f1724918"
+          },
+          {
+            "letra": "E",
+            "texto": "É possível recuperar dados utilizando HTML, através de formulários, ou Javascript, através de APIs. Em ambos os casos é necessária ainda uma linguagem server side.",
+            "hash": "65c42af5a74f64d9f1724919"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "(ESAF/2012 - Adaptada) A popularização dos dispositivos móveis (como tablets e smartphones) está alterando o paradigma de tornar disponíveis as informações na web, o que tem impacto direto nas boas práticas de web design. Sobre esta questão, marque a alternativa correta.\nOs recursos do HTML versão 5.0 esbarram nos mesmos problemas de compatibilidade que outras tecnologias pensadas para a navegação em desktops/laptops, como o Adobe Flash.\nA utilização de layouts fluidos aparece como uma solução viável para a adaptação dos sites à diversidade de resoluções utilizadas por dispositivos móveis, desktop e laptop.\nA construção de interfaces para telas de desktops/laptops e para dispositivos móveis só varia na escala, já que a interação com o mouse pode ser substituída, sem perdas, pela interação em dispositivos \"touch\".\nA necessidade de adaptação de conteúdo para dispositivos diversos é um incentivo ao desenvolvimento de aplicações baseadas em navegadores web.\nTanto nas interfaces para computadores desktop/laptop quanto naquelas para dispositivos móveis, o uso de texturas e gradientes se restringe a aspectos estéticos.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Os recursos do HTML versão 5.0 esbarram nos mesmos problemas de compatibilidade que outras tecnologias pensadas para a navegação em desktops/laptops, como o Adobe Flash.",
+            "hash": "65b1128dc3b1544ce7c81373"
+          },
+          {
+            "letra": "B",
+            "texto": "A utilização de layouts fluidos aparece como uma solução viável para a adaptação dos sites à diversidade de resoluções utilizadas por dispositivos móveis, desktop e laptop.",
+            "hash": "65b1128dc3b1544ce7c81374"
+          },
+          {
+            "letra": "C",
+            "texto": "A construção de interfaces para telas de desktops/laptops e para dispositivos móveis só varia na escala, já que a interação com o mouse pode ser substituída, sem perdas, pela interação em dispositivos \"touch\".",
+            "hash": "65b1128dc3b1544ce7c81375"
+          },
+          {
+            "letra": "D",
+            "texto": "A necessidade de adaptação de conteúdo para dispositivos diversos é um incentivo ao desenvolvimento de aplicações baseadas em navegadores web.",
+            "hash": "65b1128dc3b1544ce7c81376"
+          },
+          {
+            "letra": "E",
+            "texto": "Tanto nas interfaces para computadores desktop/laptop quanto naquelas para dispositivos móveis, o uso de texturas e gradientes se restringe a aspectos estéticos.",
+            "hash": "65b1128dc3b1544ce7c81377"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "(COPESE/2020 - Adaptada) O modelo cliente X servidor é a base do ambiente web e de suas aplicações. Sobre a arquitetura cliente-servidor, marque a opção CORRETA.\nEsta arquitetura entrou em desuso em decorrência da arquitetura ponto-a-ponto.\nO servidor se preocupa principalmente em requisitar informações.\nO navegador Web Opera é um exemplo de cliente.\nOs clientes são responsáveis por armazenar os dados nesta arquitetura, pois possuem um controle de segurança superior aos servidores.\nOs servidores não compartilham quaisquer dos seus recursos.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Esta arquitetura entrou em desuso em decorrência da arquitetura ponto-a-ponto.",
+            "hash": "65b132a555fefcc52fd55307"
+          },
+          {
+            "letra": "B",
+            "texto": "O servidor se preocupa principalmente em requisitar informações.",
+            "hash": "65b132a555fefcc52fd55308"
+          },
+          {
+            "letra": "C",
+            "texto": "O navegador Web Opera é um exemplo de cliente.",
+            "hash": "65b132a555fefcc52fd55309"
+          },
+          {
+            "letra": "D",
+            "texto": "Os clientes são responsáveis por armazenar os dados nesta arquitetura, pois possuem um controle de segurança superior aos servidores.",
+            "hash": "65b132a555fefcc52fd5530a"
+          },
+          {
+            "letra": "E",
+            "texto": "Os servidores não compartilham quaisquer dos seus recursos.",
+            "hash": "65b132a555fefcc52fd5530b"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "(UFMT/2021 - Adaptada) O HyperText Markup Language (HTML) é usado para estruturar páginas web. A respeito de HTML, marque V para as afirmativas verdadeiras e F para as falsas.\n\n( ) É uma linguagem de programação.\n( ) Substitui o uso de código JavaScript.\n( ) Utiliza tags para delimitar conteúdo.\n( ) Possui diferentes níveis de título.\n\nAssinale a sequência correta.\nV, F, F, F\nF, V, V, F\nV, V, F, V\nF, F, V, V\nF, F, F, F",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "V, F, F, F",
+            "hash": "65b132da55fefcc52fd55b73"
+          },
+          {
+            "letra": "B",
+            "texto": "F, V, V, F",
+            "hash": "65b132da55fefcc52fd55b74"
+          },
+          {
+            "letra": "C",
+            "texto": "V, V, F, V",
+            "hash": "65b132da55fefcc52fd55b75"
+          },
+          {
+            "letra": "D",
+            "texto": "F, F, V, V",
+            "hash": "65b132da55fefcc52fd55b76"
+          },
+          {
+            "letra": "E",
+            "texto": "F, F, F, F",
+            "hash": "65b132da55fefcc52fd55b77"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "(UNIOESTE/2022 - Adaptada) Com relação às Ferramentas de desenvolvimento Web: CSS, assinale a alternativa que completa a sentença: \"A Cascading Style Sheets (CSS) é uma linguagem de folha de estilo criada para ...\":\nSeparar a forma e o conteúdo em arquivos distintos de maneira a reduzir o tempo de carregamento de uma página web.\nDescrever a apresentação de arquivos no formato HTML, utilizando definições de exibição dos elementos deste arquivo.\nPermitir elaborar e executar, a partir do código HTML, funções matemáticas complexas.\nSimplificar a diagramação em HTML com elementos definidos em estruturas hierárquicas.\nProgramação de alto nível em roteadores e switches.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Separar a forma e o conteúdo em arquivos distintos de maneira a reduzir o tempo de carregamento de uma página web.",
+            "hash": "65b109fcce59b6da9853e7c9"
+          },
+          {
+            "letra": "B",
+            "texto": "Descrever a apresentação de arquivos no formato HTML, utilizando definições de exibição dos elementos deste arquivo.",
+            "hash": "65b109fcce59b6da9853e7ca"
+          },
+          {
+            "letra": "C",
+            "texto": "Permitir elaborar e executar, a partir do código HTML, funções matemáticas complexas.",
+            "hash": "65b109fcce59b6da9853e7cb"
+          },
+          {
+            "letra": "D",
+            "texto": "Simplificar a diagramação em HTML com elementos definidos em estruturas hierárquicas.",
+            "hash": "65b109fcce59b6da9853e7cc"
+          },
+          {
+            "letra": "E",
+            "texto": "Programação de alto nível em roteadores e switches.",
+            "hash": "65b109fcce59b6da9853e7cd"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "(INSTITUTO AOCP/2018) Existem diversas técnicas utilizadas para se obter um design responsivo de aplicações web e também diversos motivos para que se procure essa responsividade. Um dos pontos principais é que as pessoas já acessam a internet mais em dispositivos móveis do que em computadores desktops e notebooks. Sobre esse design responsivo e as aplicações móveis, assinale a alternativa correta.\nA técnica Mobile First é muito eficiente: começar projetando para mobile e depois projetar com melhoramento progressivo permite abranger todos os devices.\nUma das principais técnicas adotadas é o desenvolvimento de aplicações em grandes dispositivos, para então pensar nos menores. Do maior para o menor.\nProjetar levando em conta Mobile Last requer uma revisão profunda e fundamental de um site e, mais importante, requer uma revisão mental.\nProjetar usando Mobile Last requer um planejamento cuidadoso, tempo e execução séria e com disciplina.\nDe maneira geral, as pessoas que usam dispositivos móveis ficam com \"um olho no gato e outro no peixe\", então pensar primeiro em um design para elas não é uma boa tática.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "A técnica Mobile First é muito eficiente: começar projetando para mobile e depois projetar com melhoramento progressivo permite abranger todos os devices.",
+            "hash": "65b11634c3b1544ce7c8b493"
+          },
+          {
+            "letra": "B",
+            "texto": "Uma das principais técnicas adotadas é o desenvolvimento de aplicações em grandes dispositivos, para então pensar nos menores. Do maior para o menor.",
+            "hash": "65b11634c3b1544ce7c8b494"
+          },
+          {
+            "letra": "C",
+            "texto": "Projetar levando em conta Mobile Last requer uma revisão profunda e fundamental de um site e, mais importante, requer uma revisão mental.",
+            "hash": "65b11634c3b1544ce7c8b495"
+          },
+          {
+            "letra": "D",
+            "texto": "Projetar usando Mobile Last requer um planejamento cuidadoso, tempo e execução séria e com disciplina.",
+            "hash": "65b11634c3b1544ce7c8b496"
+          },
+          {
+            "letra": "E",
+            "texto": "De maneira geral, as pessoas que usam dispositivos móveis ficam com \"um olho no gato e outro no peixe\", então pensar primeiro em um design para elas não é uma boa tática.",
+            "hash": "65b11634c3b1544ce7c8b497"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "(PS Concursos/2021) Analise o código abaixo e responda, a qual linguagem de programação melhor se enquadra essa sintaxe:\n\n<?\n    $v1 = 40;\n    $v2 = 20;\n\n    if ($v1 > $v2) {\n        echo \"A variável \" . $v1 . \" é maior que a variável \" . $v2;\n    }\n?>\n\n\nMarque a alternativa correta.\nASP.\nPascal.\nJava.\nC#.\nPHP.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "ASP.",
+            "hash": "65ea0a229f4d34005792352b"
+          },
+          {
+            "letra": "B",
+            "texto": "Pascal.",
+            "hash": "65ea0a229f4d34005792352c"
+          },
+          {
+            "letra": "C",
+            "texto": "Java.",
+            "hash": "65ea0a229f4d34005792352d"
+          },
+          {
+            "letra": "D",
+            "texto": "C#.",
+            "hash": "65ea0a229f4d34005792352e"
+          },
+          {
+            "letra": "E",
+            "texto": "PHP.",
+            "hash": "65ea0a229f4d34005792352f"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Linguagem de Marcação de Hypertexto - Ht...",
+    "tema": "Tema 3",
+    "listaId": "00084",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "No contexto do surgimento da World Wide Web e do desenvolvimento da linguagem de marcação de hipertexto (HTML), a especificação original foi concebida a partir da união de dois padrões pré-existentes. Quais foram esses dois padrões que serviram de base para a criação da HTML?\nSGML e HyTime.\nXML e XHTML.\nCSS e JavaScript.\nHTTP e TCP/IP.\nDTD e W3C.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "SGML e HyTime.",
+            "hash": "6ac6774fdfaa4f577a214a5f"
+          },
+          {
+            "letra": "B",
+            "texto": "XML e XHTML.",
+            "hash": "6ac6774fdfaa4f577a214a60"
+          },
+          {
+            "letra": "C",
+            "texto": "CSS e JavaScript.",
+            "hash": "6ac6774fdfaa4f577a214a61"
+          },
+          {
+            "letra": "D",
+            "texto": "HTTP e TCP/IP.",
+            "hash": "6ac6774fdfaa4f577a214a62"
+          },
+          {
+            "letra": "E",
+            "texto": "DTD e W3C.",
+            "hash": "6ac6774fdfaa4f577a214a63"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "Na construção do cabeçalho de um documento HTML, diversas tags são empregadas para declarar metadados, importar recursos e definir scripts. Qual tag do cabeçalho é especificamente responsável por vincular arquivos externos de folhas de estilo (CSS) ou incluir favicons?\n<meta>\n<link>\n<style>\n<script>\n<title>",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "<meta>",
+            "hash": "6ac6774fdfaa4f577a214a32"
+          },
+          {
+            "letra": "B",
+            "texto": "<link>",
+            "hash": "6ac6774fdfaa4f577a214a33"
+          },
+          {
+            "letra": "C",
+            "texto": "<style>",
+            "hash": "6ac6774fdfaa4f577a214a34"
+          },
+          {
+            "letra": "D",
+            "texto": "<script>",
+            "hash": "6ac6774fdfaa4f577a214a35"
+          },
+          {
+            "letra": "E",
+            "texto": "<title>",
+            "hash": "6ac6774fdfaa4f577a214a36"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "Na HTML5, a incorporação de arquivos de áudio e vídeo tornou-se nativa por meio de tags dedicadas. Qual atributo deve ser incluído na tag <video> ou <audio> para fornecer ao usuário botões de controle de reprodução, como play, pause e volume?\nautoplay\nloop\ncontrols\nsrc\nalt",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "autoplay",
+            "hash": "6ac6774fdfaa4f577a214a5a"
+          },
+          {
+            "letra": "B",
+            "texto": "loop",
+            "hash": "6ac6774fdfaa4f577a214a5b"
+          },
+          {
+            "letra": "C",
+            "texto": "controls",
+            "hash": "6ac6774fdfaa4f577a214a5c"
+          },
+          {
+            "letra": "D",
+            "texto": "src",
+            "hash": "6ac6774fdfaa4f577a214a5d"
+          },
+          {
+            "letra": "E",
+            "texto": "alt",
+            "hash": "6ac6774fdfaa4f577a214a5e"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "(UFMT/2022) A coluna da esquerda apresenta elementos presentes no HTML5 e a da direita, a característica de cada um. Numere a coluna da direita de acordo com a da esquerda.\n\nMarque a sequência correta.\n3, 4, 2, 1.\n3, 1, 4, 2.\n2, 1, 3, 4.\n2, 1, 4, 3.\n2, 4, 1, 3.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "3, 4, 2, 1.",
+            "hash": "65ea065c9d9df68481711800"
+          },
+          {
+            "letra": "B",
+            "texto": "3, 1, 4, 2.",
+            "hash": "65ea065c9d9df68481711801"
+          },
+          {
+            "letra": "C",
+            "texto": "2, 1, 3, 4.",
+            "hash": "65ea065c9d9df68481711802"
+          },
+          {
+            "letra": "D",
+            "texto": "2, 1, 4, 3.",
+            "hash": "65ea065c9d9df68481711803"
+          },
+          {
+            "letra": "E",
+            "texto": "2, 4, 1, 3.",
+            "hash": "65ea065c9d9df68481711804"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Em uma tabela HTML, quando há a necessidade de mesclar células verticalmente abrangendo mais de uma linha, qual atributo deve ser inserido na célula correspondente?\ncolspan\nrowspan\ncellmerge\nspan\nalign",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "colspan",
+            "hash": "6ac6774fdfaa4f577a214a41"
+          },
+          {
+            "letra": "B",
+            "texto": "rowspan",
+            "hash": "6ac6774fdfaa4f577a214a42"
+          },
+          {
+            "letra": "C",
+            "texto": "cellmerge",
+            "hash": "6ac6774fdfaa4f577a214a43"
+          },
+          {
+            "letra": "D",
+            "texto": "span",
+            "hash": "6ac6774fdfaa4f577a214a44"
+          },
+          {
+            "letra": "E",
+            "texto": "align",
+            "hash": "6ac6774fdfaa4f577a214a45"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "A HTML permite a criação de listas de definição para apresentar termos associados às suas respectivas explicações. Qual é a combinação correta de tags utilizadas como container, termo e descrição em uma lista de definição?\n<ol>, <li> e <ld>\n<ul>, <li> e <dt>\n<dl>, <dt> e <dd>\n<list>, <item> e <desc>\n<table>, <tr> e <td>",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "<ol>, <li> e <ld>",
+            "hash": "6ac6774fdfaa4f577a214a37"
+          },
+          {
+            "letra": "B",
+            "texto": "<ul>, <li> e <dt>",
+            "hash": "6ac6774fdfaa4f577a214a38"
+          },
+          {
+            "letra": "C",
+            "texto": "<dl>, <dt> e <dd>",
+            "hash": "6ac6774fdfaa4f577a214a39"
+          },
+          {
+            "letra": "D",
+            "texto": "<list>, <item> e <desc>",
+            "hash": "6ac6774fdfaa4f577a214a3a"
+          },
+          {
+            "letra": "E",
+            "texto": "<table>, <tr> e <td>",
+            "hash": "6ac6774fdfaa4f577a214a3b"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "A tag <img> é empregada para inserir imagens em documentos HTML e faz uso de atributos para sua correta exibição e acessibilidade. Qual é a função do atributo \"alt\" nessa tag?\nDefinir o caminho e o nome do arquivo da imagem a ser carregada.\nDefinir um texto alternativo exibido caso a imagem não seja carregada ou lido por leitores de tela.\nDeterminar a altura da imagem em porcentagem em relação à tela.\nEspecificar uma chave identificadora única para o elemento no documento.\nAplicar um filtro de alinhamento visual automático ao redor da imagem.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Definir o caminho e o nome do arquivo da imagem a ser carregada.",
+            "hash": "6ac6774fdfaa4f577a214a87"
+          },
+          {
+            "letra": "B",
+            "texto": "Definir um texto alternativo exibido caso a imagem não seja carregada ou lido por leitores de tela.",
+            "hash": "6ac6774fdfaa4f577a214a88"
+          },
+          {
+            "letra": "C",
+            "texto": "Determinar a altura da imagem em porcentagem em relação à tela.",
+            "hash": "6ac6774fdfaa4f577a214a89"
+          },
+          {
+            "letra": "D",
+            "texto": "Especificar uma chave identificadora única para o elemento no documento.",
+            "hash": "6ac6774fdfaa4f577a214a8a"
+          },
+          {
+            "letra": "E",
+            "texto": "Aplicar um filtro de alinhamento visual automático ao redor da imagem.",
+            "hash": "6ac6774fdfaa4f577a214a8b"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "(OBJETIVA/2021 - Adaptada) O objetivo principal de uma linguagem de marcação de hipertexto é o de estruturar o conteúdo de um documento. O trecho HTML a seguir corresponde a:\n\n<ul>\n    <li>Café</li>\n    <li>Chá</li>\n    <li>Leite</li>\n</ul>\nUma tabela.\nUma lista ordenada.\nUma lista não ordenada.\nUma divisão.\nItens de uma tabela.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Uma tabela.",
+            "hash": "65ea09469f4d340057921771"
+          },
+          {
+            "letra": "B",
+            "texto": "Uma lista ordenada.",
+            "hash": "65ea09469f4d340057921772"
+          },
+          {
+            "letra": "C",
+            "texto": "Uma lista não ordenada.",
+            "hash": "65ea09469f4d340057921773"
+          },
+          {
+            "letra": "D",
+            "texto": "Uma divisão.",
+            "hash": "65ea09469f4d340057921774"
+          },
+          {
+            "letra": "E",
+            "texto": "Itens de uma tabela.",
+            "hash": "65ea09469f4d340057921775"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "O W3C é o consórcio internacional mantenedor dos padrões para a Web e uma de suas funções é a de cuidar da evolução da HTML, o que normalmente acontece com o lançamento de novas versões. Dentro das melhorias esperadas em uma nova especificação HTML podemos elencar:\n    \n    I. Aumentar o tempo de resposta entre as requisições.\n    \n    II. Formalização de regras e características.\n   \n    III. Correção de problemas de compatibilidade.\n    IV. Criação de novas tags.\nAssinale a alternativa que apresente todas as melhorias esperadas.\nI, apenas.\nII, apenas.\nI, II e III apenas.\nII, III e IV apenas.\nI e IV, apenas.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "I, apenas.",
+            "hash": "65ea4e1170af74373849ff41"
+          },
+          {
+            "letra": "B",
+            "texto": "II, apenas.",
+            "hash": "65ea4e1170af74373849ff42"
+          },
+          {
+            "letra": "C",
+            "texto": "I, II e III apenas.",
+            "hash": "65ea4e1170af74373849ff43"
+          },
+          {
+            "letra": "D",
+            "texto": "II, III e IV apenas.",
+            "hash": "65ea4e1170af74373849ff44"
+          },
+          {
+            "letra": "E",
+            "texto": "I e IV, apenas.",
+            "hash": "65ea4e1170af74373849ff45"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "(OBJETIVA/2021 - Adaptada) HTML é uma linguagem de marcação que faz uso de tags para estruturar o seu conteúdo. Em uma página HTML, para que é utilizada a tag abaixo?\n\n<a></a>\nInserção de imagem.\nInserção de link.\nDefinição de parágrafo.\nDefinição de título.\nDefinição de tabela.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Inserção de imagem.",
+            "hash": "65b10ac3ce59b6da9853fe1a"
+          },
+          {
+            "letra": "B",
+            "texto": "Inserção de link.",
+            "hash": "65b10ac3ce59b6da9853fe1b"
+          },
+          {
+            "letra": "C",
+            "texto": "Definição de parágrafo.",
+            "hash": "65b10ac3ce59b6da9853fe1c"
+          },
+          {
+            "letra": "D",
+            "texto": "Definição de título.",
+            "hash": "65b10ac3ce59b6da9853fe1d"
+          },
+          {
+            "letra": "E",
+            "texto": "Definição de tabela.",
+            "hash": "65b10ac3ce59b6da9853fe1e"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Linguagem de Marcação e Estilos - Css",
+    "tema": "Tema 4",
+    "listaId": "00468",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "(FURB/2022) É possível personalizar várias características de um texto, utilizando-se das propriedades do CSS. Assim sendo, a propriedade CSS que pode ser utilizada para tornar um texto negrito é:\ntext-decoration: bold\nboldness: true\nfont-weight: bold\nfont-style: bold\ntext-thickness: bold",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "text-decoration: bold",
+            "hash": "65b11d6e9ca9510b1781801b"
+          },
+          {
+            "letra": "B",
+            "texto": "boldness: true",
+            "hash": "65b11d6e9ca9510b1781801c"
+          },
+          {
+            "letra": "C",
+            "texto": "font-weight: bold",
+            "hash": "65b11d6e9ca9510b1781801d"
+          },
+          {
+            "letra": "D",
+            "texto": "font-style: bold",
+            "hash": "65b11d6e9ca9510b1781801e"
+          },
+          {
+            "letra": "E",
+            "texto": "text-thickness: bold",
+            "hash": "65b11d6e9ca9510b1781801f"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "A propriedade e o valor da regra de estilo CSS que estabelecem a distância de 16px entre o conteúdo de um elemento HTML e a sua borda, no contexto do modelo CSS Box, é:\nmargin: 16px;\nborder-width: 16px;\nword-spacing: 16px;\nletter-spacing: 16px;\npadding: 16px;",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "margin: 16px;",
+            "hash": "65b115b5c3b1544ce7c89ee8"
+          },
+          {
+            "letra": "B",
+            "texto": "border-width: 16px;",
+            "hash": "65b115b5c3b1544ce7c89ee9"
+          },
+          {
+            "letra": "C",
+            "texto": "word-spacing: 16px;",
+            "hash": "65b115b5c3b1544ce7c89eea"
+          },
+          {
+            "letra": "D",
+            "texto": "letter-spacing: 16px;",
+            "hash": "65b115b5c3b1544ce7c89eeb"
+          },
+          {
+            "letra": "E",
+            "texto": "padding: 16px;",
+            "hash": "65b115b5c3b1544ce7c89eec"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "No CSS, o seletor que localiza um elemento pelo seu atributo \"id\" é:\n#id\n.id\n*id\n:id\n~id",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "#id",
+            "hash": "65b13c7d55fefcc52fd6b69f"
+          },
+          {
+            "letra": "B",
+            "texto": ".id",
+            "hash": "65b13c7d55fefcc52fd6b6a0"
+          },
+          {
+            "letra": "C",
+            "texto": "*id",
+            "hash": "65b13c7d55fefcc52fd6b6a1"
+          },
+          {
+            "letra": "D",
+            "texto": ":id",
+            "hash": "65b13c7d55fefcc52fd6b6a2"
+          },
+          {
+            "letra": "E",
+            "texto": "~id",
+            "hash": "65b13c7d55fefcc52fd6b6a3"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "(AOCP/2013 - Adaptada) HTML e CSS podem ser utilizados em conjunto. Qual a responsabilidade dos códigos CSS para uma aplicação web?\nO código CSS é responsável por prover o conteúdo da aplicação.\nO código CSS é responsável por processar os dados no lado do servidor.\nO código CSS irá fazer chamadas assíncronas para o servidor.\nO código CSS irá cuidar da formatação visual do conteúdo apresentado.\nO código CSS é responsável por processar conteúdos de downloads.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "O código CSS é responsável por prover o conteúdo da aplicação.",
+            "hash": "65b1270b9ca9510b1782ba2b"
+          },
+          {
+            "letra": "B",
+            "texto": "O código CSS é responsável por processar os dados no lado do servidor.",
+            "hash": "65b1270b9ca9510b1782ba2c"
+          },
+          {
+            "letra": "C",
+            "texto": "O código CSS irá fazer chamadas assíncronas para o servidor.",
+            "hash": "65b1270b9ca9510b1782ba2d"
+          },
+          {
+            "letra": "D",
+            "texto": "O código CSS irá cuidar da formatação visual do conteúdo apresentado.",
+            "hash": "65b1270b9ca9510b1782ba2e"
+          },
+          {
+            "letra": "E",
+            "texto": "O código CSS é responsável por processar conteúdos de downloads.",
+            "hash": "65b1270b9ca9510b1782ba2f"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "(COPEL/2015 - Adaptada) Com a utilização de CSS, podemos manipular as cores dos elementos HTML. Assinale a alternativa que apresenta apenas padrões válidos para a definição de cores em CSS.\nRGB - RGB com porcentagem - LAB.\nPalavras-chave - RGB com porcentagem - números hexadecimais com canal alpha.\nCMYK - RGB - palavras-chave.\nHSL - RGB - números hexadecimais.\nRGBA - HSLA - números decimais.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "RGB - RGB com porcentagem - LAB.",
+            "hash": "65b1157dc3b1544ce7c895a8"
+          },
+          {
+            "letra": "B",
+            "texto": "Palavras-chave - RGB com porcentagem - números hexadecimais com canal alpha.",
+            "hash": "65b1157dc3b1544ce7c895a9"
+          },
+          {
+            "letra": "C",
+            "texto": "CMYK - RGB - palavras-chave.",
+            "hash": "65b1157dc3b1544ce7c895aa"
+          },
+          {
+            "letra": "D",
+            "texto": "HSL - RGB - números hexadecimais.",
+            "hash": "65b1157dc3b1544ce7c895ab"
+          },
+          {
+            "letra": "E",
+            "texto": "RGBA - HSLA - números decimais.",
+            "hash": "65b1157dc3b1544ce7c895ac"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "(AOCP/2013) As regras do CSS podem ser definidas em alguns lugares diferentes em um documento HTML. Assinale a seguir a alternativa que descreve as formas onde podemos aplicar as formatações com CSS.\nEm um documento separado fora de todos os documentos HTML, no cabeçalho do documento HTML, dentro de cada tag HTML e fora das tags HTML.\nEm um documento separado fora de todos os documentos HTML, no cabeçalho do documento HTML e dentro de cada tag HTML.\nEm um documento separado fora de todos os documentos HTML e no cabeçalho do documento HTML.\nNo cabeçalho do documento HTML e dentro de cada tag HTML.\nSomente no cabeçalho do documento HTML.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Em um documento separado fora de todos os documentos HTML, no cabeçalho do documento HTML, dentro de cada tag HTML e fora das tags HTML.",
+            "hash": "65b138cb55fefcc52fd63799"
+          },
+          {
+            "letra": "B",
+            "texto": "Em um documento separado fora de todos os documentos HTML, no cabeçalho do documento HTML e dentro de cada tag HTML.",
+            "hash": "65b138cb55fefcc52fd6379a"
+          },
+          {
+            "letra": "C",
+            "texto": "Em um documento separado fora de todos os documentos HTML e no cabeçalho do documento HTML.",
+            "hash": "65b138cb55fefcc52fd6379b"
+          },
+          {
+            "letra": "D",
+            "texto": "No cabeçalho do documento HTML e dentro de cada tag HTML.",
+            "hash": "65b138cb55fefcc52fd6379c"
+          },
+          {
+            "letra": "E",
+            "texto": "Somente no cabeçalho do documento HTML.",
+            "hash": "65b138cb55fefcc52fd6379d"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "(UNIOESTE/2022 - Adaptada) Com relação às Ferramentas de desenvolvimento Web: CSS, assinale a alternativa que completa a sentença: \"A Cascading Style Sheets (CSS) é uma linguagem de folha de estilo criada para ...\":\nSeparar a forma e o conteúdo em arquivos distintos de maneira a reduzir o tempo de carregamento de uma página web.\nDescrever a apresentação de arquivos no formato HTML, utilizando definições de exibição dos elementos deste arquivo.\nPermitir elaborar e executar, a partir do código HTML, funções matemáticas complexas.\nSimplificar a diagramação em HTML com elementos definidos em estruturas hierárquicas.\nProgramação de alto nível em roteadores e switches.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Separar a forma e o conteúdo em arquivos distintos de maneira a reduzir o tempo de carregamento de uma página web.",
+            "hash": "65c422cd057c15e73ab2924f"
+          },
+          {
+            "letra": "B",
+            "texto": "Descrever a apresentação de arquivos no formato HTML, utilizando definições de exibição dos elementos deste arquivo.",
+            "hash": "65c422cd057c15e73ab29250"
+          },
+          {
+            "letra": "C",
+            "texto": "Permitir elaborar e executar, a partir do código HTML, funções matemáticas complexas.",
+            "hash": "65c422cd057c15e73ab29251"
+          },
+          {
+            "letra": "D",
+            "texto": "Simplificar a diagramação em HTML com elementos definidos em estruturas hierárquicas.",
+            "hash": "65c422cd057c15e73ab29252"
+          },
+          {
+            "letra": "E",
+            "texto": "Programação de alto nível em roteadores e switches.",
+            "hash": "65c422cd057c15e73ab29253"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "Em um documento HTML, o lugar correto para se declarar folhas de estilo CSS externas é dentro da seção:\n< div >\n< head >\n< body >\n< title >\n< css >",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "< div >",
+            "hash": "65b138ef55fefcc52fd63c77"
+          },
+          {
+            "letra": "B",
+            "texto": "< head >",
+            "hash": "65b138ef55fefcc52fd63c78"
+          },
+          {
+            "letra": "C",
+            "texto": "< body >",
+            "hash": "65b138ef55fefcc52fd63c79"
+          },
+          {
+            "letra": "D",
+            "texto": "< title >",
+            "hash": "65b138ef55fefcc52fd63c7a"
+          },
+          {
+            "letra": "E",
+            "texto": "< css >",
+            "hash": "65b138ef55fefcc52fd63c7b"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "A CSS permite alterar o comportamento padrão dos elementos HTML. Nesse sentido, a propriedade responsável por alterar a posição dos elementos é:\nDisplay\nPadding\nBorder\nPosition\nLine-height",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Display",
+            "hash": "65b1290a9ca9510b17830017"
+          },
+          {
+            "letra": "B",
+            "texto": "Padding",
+            "hash": "65b1290a9ca9510b17830018"
+          },
+          {
+            "letra": "C",
+            "texto": "Border",
+            "hash": "65b1290a9ca9510b17830019"
+          },
+          {
+            "letra": "D",
+            "texto": "Position",
+            "hash": "65b1290a9ca9510b1783001a"
+          },
+          {
+            "letra": "E",
+            "texto": "Line-height",
+            "hash": "65b1290a9ca9510b1783001b"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "(FGV/2021) No contexto da formatação de páginas Web, assinale o papel da propriedade padding no CSS em relação a um box.\nDefinir a altura e a largura.\nDefinir a espessura da área que separa as bordas do preenchimento.\nDefinir a espessura das margens externas.\nDefinir a espessura e o estilo da borda.\nDefinir a unidade utilizada para estabelecer as dimensões.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Definir a altura e a largura.",
+            "hash": "65b1363d55fefcc52fd5dac6"
+          },
+          {
+            "letra": "B",
+            "texto": "Definir a espessura da área que separa as bordas do preenchimento.",
+            "hash": "65b1363d55fefcc52fd5dac7"
+          },
+          {
+            "letra": "C",
+            "texto": "Definir a espessura das margens externas.",
+            "hash": "65b1363d55fefcc52fd5dac8"
+          },
+          {
+            "letra": "D",
+            "texto": "Definir a espessura e o estilo da borda.",
+            "hash": "65b1363d55fefcc52fd5dac9"
+          },
+          {
+            "letra": "E",
+            "texto": "Definir a unidade utilizada para estabelecer as dimensões.",
+            "hash": "65b1363d55fefcc52fd5daca"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Linguagem Javascript",
+    "tema": "Tema 5",
+    "listaId": "00385",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "O acrônimo AJAX (Asynchronous JavaScript and XML) designa um conjunto de tecnologias integradas para transmissão de dados na web. Embora contenha XML em seu nome, quais outros formatos de dados podem ser manipulados por meio do AJAX?\nEstritamente dados compilados em formato binário executável (.exe).\nDocumentos HTML, arquivos de texto puro e dados estruturados em formato JSON.\nExclusivamente arquivos de estilização com extensão .css minificada.\nApenas esquemas de metadados relacionais no formato SQL nativo.\nApenas tabelas de transformação de dados em lote no formato XSLT puro.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Estritamente dados compilados em formato binário executável (.exe).",
+            "hash": "6ac6774fdfaa4f577a214af0"
+          },
+          {
+            "letra": "B",
+            "texto": "Documentos HTML, arquivos de texto puro e dados estruturados em formato JSON.",
+            "hash": "6ac6774fdfaa4f577a214af1"
+          },
+          {
+            "letra": "C",
+            "texto": "Exclusivamente arquivos de estilização com extensão .css minificada.",
+            "hash": "6ac6774fdfaa4f577a214af2"
+          },
+          {
+            "letra": "D",
+            "texto": "Apenas esquemas de metadados relacionais no formato SQL nativo.",
+            "hash": "6ac6774fdfaa4f577a214af3"
+          },
+          {
+            "letra": "E",
+            "texto": "Apenas tabelas de transformação de dados em lote no formato XSLT puro.",
+            "hash": "6ac6774fdfaa4f577a214af4"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "No ecossistema JavaScript, os vetores (arrays) possuem particularidades quanto à sua tipagem e dimensão. Assinale a alternativa que apresenta corretamente uma característica dos arrays em JavaScript.\nApresentam dimensionamento dinâmico e suportam o armazenamento de múltiplos tipos de dados em uma mesma estrutura.\nRequerem que o tamanho total seja obrigatoriamente estipulado e fixado no momento de sua instanciação.\nPermitem apenas o armazenamento de dados primitivos do mesmo tipo, rejeitando estruturas heterogêneas.\nIniciam a indexação de seus elementos a partir da posição numérica 1 por convenção da especificação ECMA.\nPossuem limite operacional restrito a exatamente 1024 elementos por instância criada.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Apresentam dimensionamento dinâmico e suportam o armazenamento de múltiplos tipos de dados em uma mesma estrutura.",
+            "hash": "6ac6774fdfaa4f577a214ad2"
+          },
+          {
+            "letra": "B",
+            "texto": "Requerem que o tamanho total seja obrigatoriamente estipulado e fixado no momento de sua instanciação.",
+            "hash": "6ac6774fdfaa4f577a214ad3"
+          },
+          {
+            "letra": "C",
+            "texto": "Permitem apenas o armazenamento de dados primitivos do mesmo tipo, rejeitando estruturas heterogêneas.",
+            "hash": "6ac6774fdfaa4f577a214ad4"
+          },
+          {
+            "letra": "D",
+            "texto": "Iniciam a indexação de seus elementos a partir da posição numérica 1 por convenção da especificação ECMA.",
+            "hash": "6ac6774fdfaa4f577a214ad5"
+          },
+          {
+            "letra": "E",
+            "texto": "Possuem limite operacional restrito a exatamente 1024 elementos por instância criada.",
+            "hash": "6ac6774fdfaa4f577a214ad6"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "(IDECAN/2023) JavaScript é uma linguagem de programação interpretada estruturada de script muito usada para programação FrontEnd. Selecione o método em JavaScript que remove de um vetor o primeiro elemento e o retorna como resultado.\npush()\nshift()\npop()\njoin()\nreverse()",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "push()",
+            "hash": "654d3bf2134266c15973319a"
+          },
+          {
+            "letra": "B",
+            "texto": "shift()",
+            "hash": "654d3bf2134266c15973319b"
+          },
+          {
+            "letra": "C",
+            "texto": "pop()",
+            "hash": "654d3bf2134266c15973319c"
+          },
+          {
+            "letra": "D",
+            "texto": "join()",
+            "hash": "654d3bf2134266c15973319d"
+          },
+          {
+            "letra": "E",
+            "texto": "reverse()",
+            "hash": "654d3bf2134266c15973319e"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "(VUNESP/2022) Em um programa elaborado em JavaScript, incluiu-se a seguinte estrutura condicional, na qual X e Y representam comandos removidos:\n\nswitch (semaforo){ \n    case \"verde\":\n          alert(\"siga\")\n          X\n \tcase \"amarelo\":\n          alert(\"atencao\")\n}\t\t  X\n \tcase \"vermelho\":\n          alert(\"pare\")\n          X\n    Y:\n          alert(\"cor invalida\")\n}\n\n\nOs comandos X e Y que devem ser colocados para que a estrutura condicional seja executada adequadamente são, respectivamente,\nbreak e default.\nbreak e end.\nend e close.\nstop e close.\nstop e default.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "break e default.",
+            "hash": "654d3bf2134266c1597331ac"
+          },
+          {
+            "letra": "B",
+            "texto": "break e end.",
+            "hash": "654d3bf2134266c1597331ad"
+          },
+          {
+            "letra": "C",
+            "texto": "end e close.",
+            "hash": "654d3bf2134266c1597331ae"
+          },
+          {
+            "letra": "D",
+            "texto": "stop e close.",
+            "hash": "654d3bf2134266c1597331af"
+          },
+          {
+            "letra": "E",
+            "texto": "stop e default.",
+            "hash": "654d3bf2134266c1597331b0"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Analise o seguinte código escrito na linguagem JavaScript:\n\nvar frutas = new Array(\"banana\", \"laranja\", \"limão\");\n\nfrutas.shift();\nfrutas.splice(1, 1, \"uva\");\n\nfor (var i = 0; i < frutas.length; i++) {\n    document.write(frutas[i] + \" | \");\n}\nbanana | laranja | limao | uva |\nbanana | uva | laranja | limao |\nlaranja | uva |\nlaranja | uva | limao\nuva |",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "banana | laranja | limao | uva |",
+            "hash": "65ea08939f4d340057920161"
+          },
+          {
+            "letra": "B",
+            "texto": "banana | uva | laranja | limao |",
+            "hash": "65ea08939f4d340057920162"
+          },
+          {
+            "letra": "C",
+            "texto": "laranja | uva |",
+            "hash": "65ea08939f4d340057920163"
+          },
+          {
+            "letra": "D",
+            "texto": "laranja | uva | limao",
+            "hash": "65ea08939f4d340057920164"
+          },
+          {
+            "letra": "E",
+            "texto": "uva |",
+            "hash": "65ea08939f4d340057920165"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "(UFRPE/2018) Como resposta a uma requisição AJAX, o script executando no servidor envia para o cliente a cadeia de caracteres seguinte, no formato JSON:\n\n{ \"nome\":\"Rodrigo\", \"id\":8723, \"v\": [-1,2] }\n\nque é recebida no seguinte campo do objeto XMLHttpRequest, em Javascript:\nresponseString\nserverResponse\nresponseText\nJSONResponse\nJSONResponseString",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "responseString",
+            "hash": "65ea08eb9f4d340057920b7e"
+          },
+          {
+            "letra": "B",
+            "texto": "serverResponse",
+            "hash": "65ea08eb9f4d340057920b7f"
+          },
+          {
+            "letra": "C",
+            "texto": "responseText",
+            "hash": "65ea08eb9f4d340057920b80"
+          },
+          {
+            "letra": "D",
+            "texto": "JSONResponse",
+            "hash": "65ea08eb9f4d340057920b81"
+          },
+          {
+            "letra": "E",
+            "texto": "JSONResponseString",
+            "hash": "65ea08eb9f4d340057920b82"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "Numa discussão entre os programadores sobre os conceitos de AJAX (Asynchronous JavaScript and XML), as seguintes afirmações foram feitas:\n(  ) Permite atualizar dinamicamente o conteúdo, ou partes, de uma página Web.\n(  ) Embora usado no nome, a utilização da linguagem XML não é obrigatória.\n(  ) A XMLHttpRequest(XHR) é utilizada para enviar requisições pelo script para o lado client.\n \nDê valores Verdadeiro (V) ou Falso (F) em cada afirmação e identifique a alternativa que apresenta a sequência correta (de cima para baixo):\nV - V - V\nV - V - F\nV - F - V\nF - F - V\nF - F - F",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "V - V - V",
+            "hash": "65b1260e9ca9510b178299da"
+          },
+          {
+            "letra": "B",
+            "texto": "V - V - F",
+            "hash": "65b1260e9ca9510b178299db"
+          },
+          {
+            "letra": "C",
+            "texto": "V - F - V",
+            "hash": "65b1260e9ca9510b178299dc"
+          },
+          {
+            "letra": "D",
+            "texto": "F - F - V",
+            "hash": "65b1260e9ca9510b178299dd"
+          },
+          {
+            "letra": "E",
+            "texto": "F - F - F",
+            "hash": "65b1260e9ca9510b178299de"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "(IDECAN/2023) A linguagem de programação JavaScript permite executar códigos com lógica matemática em navegadores. Selecione a alternativa que mostra a saída do seguinte código JavaScript.\n\nfunction faz (n) {\n\ts = n.toString();\n\tvariavel = 0;\n\tfor (c of s) {\n\t  d = parseInt(c);\n \t  variavel += d;\n\t}\n\treturn variavel;\n }\n\nresultado = faz(123123);\nconsole.log(\"Resultado: \", resultado);\nResultado: 123123\nResultado: 123\nResultado: 11\nResultado: 12\nResultado: 13",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Resultado: 123123",
+            "hash": "6713c6652332ecff9c2cdffa"
+          },
+          {
+            "letra": "B",
+            "texto": "Resultado: 123",
+            "hash": "6713c6652332ecff9c2cdffb"
+          },
+          {
+            "letra": "C",
+            "texto": "Resultado: 11",
+            "hash": "6713c6652332ecff9c2cdffc"
+          },
+          {
+            "letra": "D",
+            "texto": "Resultado: 12",
+            "hash": "6713c6652332ecff9c2cdffd"
+          },
+          {
+            "letra": "E",
+            "texto": "Resultado: 13",
+            "hash": "6713c6652332ecff9c2cdffe"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "O Document Object Model (DOM) é um conceito central no desenvolvimento web com JavaScript. A respeito da definição e das características da interface DOM, assinale a opção correta.\nÉ uma extensão proprietária exclusiva da linguagem JavaScript que não pode ser manipulada por nenhuma outra linguagem.\nTrata-se de uma representação estruturada em formato de árvore composta por nós e objetos com propriedades, métodos e eventos.\nConsiste em um banco de dados local que armazena permanentemente os elementos HTML no disco rígido do cliente.\nÉ um protocolo de comunicação síncrona encarregado de sincronizar o CSS com o interpretador nativo do sistema operacional.\nTrata-se de uma folha de estilos compilada que substitui a marcação HTML original durante a interpretação da página.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "É uma extensão proprietária exclusiva da linguagem JavaScript que não pode ser manipulada por nenhuma outra linguagem.",
+            "hash": "6ac6774fdfaa4f577a214aeb"
+          },
+          {
+            "letra": "B",
+            "texto": "Trata-se de uma representação estruturada em formato de árvore composta por nós e objetos com propriedades, métodos e eventos.",
+            "hash": "6ac6774fdfaa4f577a214aec"
+          },
+          {
+            "letra": "C",
+            "texto": "Consiste em um banco de dados local que armazena permanentemente os elementos HTML no disco rígido do cliente.",
+            "hash": "6ac6774fdfaa4f577a214aed"
+          },
+          {
+            "letra": "D",
+            "texto": "É um protocolo de comunicação síncrona encarregado de sincronizar o CSS com o interpretador nativo do sistema operacional.",
+            "hash": "6ac6774fdfaa4f577a214aee"
+          },
+          {
+            "letra": "E",
+            "texto": "Trata-se de uma folha de estilos compilada que substitui a marcação HTML original durante a interpretação da página.",
+            "hash": "6ac6774fdfaa4f577a214aef"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "No ambiente web, as requisições entre cliente e servidor podem ocorrer de forma síncrona ou assíncrona. Qual é a principal vantagem da utilização de requisições assíncronas no desenvolvimento de aplicações interativas?\nImpedir que o servidor receba mais de uma chamada simultânea por navegador web.\nBloquear as interações da interface com o usuário até que todo o fluxo de resposta seja finalizado.\nPermitir a comunicação em segundo plano sem congelar a interface ou exigir o recarregamento da página.\nEliminar integralmente a necessidade de autenticação e proteção por certificados de segurança HTTPS.\nForçar a compilação de scripts nativos em tempo real no servidor web antes da resposta HTTP.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Impedir que o servidor receba mais de uma chamada simultânea por navegador web.",
+            "hash": "6ac6774fdfaa4f577a214aa0"
+          },
+          {
+            "letra": "B",
+            "texto": "Bloquear as interações da interface com o usuário até que todo o fluxo de resposta seja finalizado.",
+            "hash": "6ac6774fdfaa4f577a214aa1"
+          },
+          {
+            "letra": "C",
+            "texto": "Permitir a comunicação em segundo plano sem congelar a interface ou exigir o recarregamento da página.",
+            "hash": "6ac6774fdfaa4f577a214aa2"
+          },
+          {
+            "letra": "D",
+            "texto": "Eliminar integralmente a necessidade de autenticação e proteção por certificados de segurança HTTPS.",
+            "hash": "6ac6774fdfaa4f577a214aa3"
+          },
+          {
+            "letra": "E",
+            "texto": "Forçar a compilação de scripts nativos em tempo real no servidor web antes da resposta HTTP.",
+            "hash": "6ac6774fdfaa4f577a214aa4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Programação de Páginas Dinâmicas Com Php",
+    "tema": "Tema 6",
+    "listaId": "00297",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "(FGV/2022 - Adaptada) PHP é uma linguagem server side, gratuita e multiplataforma. Numa página web, um script PHP deve ser localizado entre as tags:\n<?php ?>\n<php php>\n<?php> <!doctype>\n<scriptPHP scriptPHP>\n<.php .php>",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "<?php ?>",
+            "hash": "660575dba93dc23412f8dda9"
+          },
+          {
+            "letra": "B",
+            "texto": "<php php>",
+            "hash": "660575dba93dc23412f8ddaa"
+          },
+          {
+            "letra": "C",
+            "texto": "<?php> <!doctype>",
+            "hash": "660575dba93dc23412f8ddab"
+          },
+          {
+            "letra": "D",
+            "texto": "<scriptPHP scriptPHP>",
+            "hash": "660575dba93dc23412f8ddac"
+          },
+          {
+            "letra": "E",
+            "texto": "<.php .php>",
+            "hash": "660575dba93dc23412f8ddad"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "Em PHP, os vetores (arrays) podem ser estruturados de diferentes maneiras de acordo com a natureza de seus índices. Como são classificados os arrays cujos índices são compostos por strings personalizadas?\nArrays numéricos\nArrays estáticos\nArrays associativos\nArrays binários\nArrays sequenciais",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Arrays numéricos",
+            "hash": "6ac6774fdfaa4f577a2130c4"
+          },
+          {
+            "letra": "B",
+            "texto": "Arrays estáticos",
+            "hash": "6ac6774fdfaa4f577a2130c5"
+          },
+          {
+            "letra": "C",
+            "texto": "Arrays associativos",
+            "hash": "6ac6774fdfaa4f577a2130c6"
+          },
+          {
+            "letra": "D",
+            "texto": "Arrays binários",
+            "hash": "6ac6774fdfaa4f577a2130c7"
+          },
+          {
+            "letra": "E",
+            "texto": "Arrays sequenciais",
+            "hash": "6ac6774fdfaa4f577a2130c8"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "No contexto do desenvolvimento web com PHP, qual é a principal diferença de execução entre um script PHP e um script JavaScript executado no lado do cliente?\nO PHP é interpretado diretamente pelo navegador do cliente, enquanto o JavaScript necessita ser compilado no servidor.\nO código PHP é processado no servidor web, gerando HTML que é enviado ao navegador, sem que o cliente tenha acesso ao código-fonte original em PHP.\nO código PHP é enviado na íntegra para o navegador, que realiza a renderização e o controle de acesso localmente.\nO PHP é restrito ao desenvolvimento de interfaces visuais estáticas, enquanto o JavaScript gerencia a comunicação com bancos de dados.\nO PHP necessita obrigatoriamente de conversão prévia para código binário antes de ser enviado ao navegador cliente.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "O PHP é interpretado diretamente pelo navegador do cliente, enquanto o JavaScript necessita ser compilado no servidor.",
+            "hash": "6ac6774fdfaa4f577a213065"
+          },
+          {
+            "letra": "B",
+            "texto": "O código PHP é processado no servidor web, gerando HTML que é enviado ao navegador, sem que o cliente tenha acesso ao código-fonte original em PHP.",
+            "hash": "6ac6774fdfaa4f577a213066"
+          },
+          {
+            "letra": "C",
+            "texto": "O código PHP é enviado na íntegra para o navegador, que realiza a renderização e o controle de acesso localmente.",
+            "hash": "6ac6774fdfaa4f577a213067"
+          },
+          {
+            "letra": "D",
+            "texto": "O PHP é restrito ao desenvolvimento de interfaces visuais estáticas, enquanto o JavaScript gerencia a comunicação com bancos de dados.",
+            "hash": "6ac6774fdfaa4f577a213068"
+          },
+          {
+            "letra": "E",
+            "texto": "O PHP necessita obrigatoriamente de conversão prévia para código binário antes de ser enviado ao navegador cliente.",
+            "hash": "6ac6774fdfaa4f577a213069"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "(NC-UFPR/2019) Qual instrução apresenta o conteúdo do primeiro elemento do vetor ou array declarado em PHP na forma:\n\n \n\n$estados = array(\"AM\", \"AP\", \"DF\", \"PR\", \"SP\",\"SC\", \"RS\");\necho $estados[1];\nprint( $estados[1] );\nprint_r( $estados[1] );\nprint( $estados );\necho $estados[0];",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "echo $estados[1];",
+            "hash": "65b13a9c55fefcc52fd676b5"
+          },
+          {
+            "letra": "B",
+            "texto": "print( $estados[1] );",
+            "hash": "65b13a9c55fefcc52fd676b6"
+          },
+          {
+            "letra": "C",
+            "texto": "print_r( $estados[1] );",
+            "hash": "65b13a9c55fefcc52fd676b7"
+          },
+          {
+            "letra": "D",
+            "texto": "print( $estados );",
+            "hash": "65b13a9c55fefcc52fd676b8"
+          },
+          {
+            "letra": "E",
+            "texto": "echo $estados[0];",
+            "hash": "65b13a9c55fefcc52fd676b9"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Na estrutura de controle de seleção múltipla switch em PHP, qual é o papel desempenhado pela cláusula default?\nInterromper imediatamente o processamento de todo o script antes de verificar as condições.\nForçar a execução de todos os blocos case declarados anteriormente na estrutura.\nExecutar um conjunto de instruções padrão caso nenhuma das condições expressas nos blocos case seja atendida.\nReiniciar a contagem de iterações da variável avaliada.\nConverter a variável avaliada para o tipo booleano false.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Interromper imediatamente o processamento de todo o script antes de verificar as condições.",
+            "hash": "6ac6774fdfaa4f577a213074"
+          },
+          {
+            "letra": "B",
+            "texto": "Forçar a execução de todos os blocos case declarados anteriormente na estrutura.",
+            "hash": "6ac6774fdfaa4f577a213075"
+          },
+          {
+            "letra": "C",
+            "texto": "Executar um conjunto de instruções padrão caso nenhuma das condições expressas nos blocos case seja atendida.",
+            "hash": "6ac6774fdfaa4f577a213076"
+          },
+          {
+            "letra": "D",
+            "texto": "Reiniciar a contagem de iterações da variável avaliada.",
+            "hash": "6ac6774fdfaa4f577a213077"
+          },
+          {
+            "letra": "E",
+            "texto": "Converter a variável avaliada para o tipo booleano false.",
+            "hash": "6ac6774fdfaa4f577a213078"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "(IDECAN/2021 - Adaptada) PHP é uma tecnologia que disponibiliza um comando para uso nas estruturas foreach, while, do-while ou switch. No seu funcionamento, ao ser detectado entre os comandos inseridos em um loop, faz com que ocorra o término imediato da execução do loop. Esse comando é conhecido por:\nexit.\nquit.\nbreak.\nhalt.\nfork.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "exit.",
+            "hash": "65b125689ca9510b17828480"
+          },
+          {
+            "letra": "B",
+            "texto": "quit.",
+            "hash": "65b125689ca9510b17828481"
+          },
+          {
+            "letra": "C",
+            "texto": "break.",
+            "hash": "65b125689ca9510b17828482"
+          },
+          {
+            "letra": "D",
+            "texto": "halt.",
+            "hash": "65b125689ca9510b17828483"
+          },
+          {
+            "letra": "E",
+            "texto": "fork.",
+            "hash": "65b125689ca9510b17828484"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "(UNIOESTE/2022 - Adaptada) Com relação ao PHP (Hypertext Preprocessor), há um comando para criar um conjunto (array) ou vetor associativo. Indique a alternativa que contém o uso correto desse comando.\n$cadastro =array(''CPF'':''1234567890'',''Nome'':''Pedro'',''Cidade'':''Cascavel'');\n$cadastro =array(''CPF'':=''1234567890'',''Nome'':=''Pedro'',''Cidade'':=''Cascavel'';\n$cadastro =array(''CPF''=''1234567890'', ''Nome''=''Pedro'', ''Cidade''=''Cascavel'');\n$cadastro =array(''CPF''=>''1234567890'',''Nome''=>''Pedro'',''Cidade''=>''Cascavel'');\n$cadastro =array(''CPF''=|=''1234567890'',''Nome''=|=''Pedro'',''Cidade''=|=''Cascavel'');",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "$cadastro =array(''CPF'':''1234567890'',''Nome'':''Pedro'',''Cidade'':''Cascavel'');",
+            "hash": "654d3bdb134266c15973219d"
+          },
+          {
+            "letra": "B",
+            "texto": "$cadastro =array(''CPF'':=''1234567890'',''Nome'':=''Pedro'',''Cidade'':=''Cascavel'';",
+            "hash": "654d3bdb134266c15973219e"
+          },
+          {
+            "letra": "C",
+            "texto": "$cadastro =array(''CPF''=''1234567890'', ''Nome''=''Pedro'', ''Cidade''=''Cascavel'');",
+            "hash": "654d3bdb134266c15973219f"
+          },
+          {
+            "letra": "D",
+            "texto": "$cadastro =array(''CPF''=>''1234567890'',''Nome''=>''Pedro'',''Cidade''=>''Cascavel'');",
+            "hash": "654d3bdb134266c1597321a0"
+          },
+          {
+            "letra": "E",
+            "texto": "$cadastro =array(''CPF''=|=''1234567890'',''Nome''=|=''Pedro'',''Cidade''=|=''Cascavel'');",
+            "hash": "654d3bdb134266c1597321a1"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "Convenções de escrita de código e boas práticas de desenvolvimento (como as preconizadas em guias de padrões e no manual da Zend) auxiliam na legibilidade e padronização do código PHP. Qual das opções descreve corretamente uma convenção de nomenclatura e organização de código amplamente adotada?\nO uso de CamelCase ou separação por underscore em nomes compostos de funções e variáveis, mantendo a consistência do padrão escolhido em todo o projeto, somado à prática de indentação adequada das instruções.\nA obrigatoriedade de escrever todo o código PHP em uma única linha contínua para acelerar a renderização no cliente.\nA proibição do uso de caracteres sublinhados em qualquer identificador de variável ou função no PHP.\nA eliminação de espaços e quebras de linha em arquivos que contenham funções com parâmetros de entrada.\nA utilização exclusiva de letras maiúsculas para nomes de variáveis locais e minúsculas para superglobais.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "O uso de CamelCase ou separação por underscore em nomes compostos de funções e variáveis, mantendo a consistência do padrão escolhido em todo o projeto, somado à prática de indentação adequada das instruções.",
+            "hash": "6ac6774fdfaa4f577a2130b0"
+          },
+          {
+            "letra": "B",
+            "texto": "A obrigatoriedade de escrever todo o código PHP em uma única linha contínua para acelerar a renderização no cliente.",
+            "hash": "6ac6774fdfaa4f577a2130b1"
+          },
+          {
+            "letra": "C",
+            "texto": "A proibição do uso de caracteres sublinhados em qualquer identificador de variável ou função no PHP.",
+            "hash": "6ac6774fdfaa4f577a2130b2"
+          },
+          {
+            "letra": "D",
+            "texto": "A eliminação de espaços e quebras de linha em arquivos que contenham funções com parâmetros de entrada.",
+            "hash": "6ac6774fdfaa4f577a2130b3"
+          },
+          {
+            "letra": "E",
+            "texto": "A utilização exclusiva de letras maiúsculas para nomes de variáveis locais e minúsculas para superglobais.",
+            "hash": "6ac6774fdfaa4f577a2130b4"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "Para verificar a quantidade total de elementos presentes em um array e para imprimir na tela a sua estrutura completa com seus índices e valores, quais funções nativas do PHP são usualmente empregadas, respectivamente?\nsize() e echo()\ncount() e print_r()\nlength() e var()\ntotal() e write()\nsizeof_array() e display()",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "size() e echo()",
+            "hash": "6ac6774fdfaa4f577a213097"
+          },
+          {
+            "letra": "B",
+            "texto": "count() e print_r()",
+            "hash": "6ac6774fdfaa4f577a213098"
+          },
+          {
+            "letra": "C",
+            "texto": "length() e var()",
+            "hash": "6ac6774fdfaa4f577a213099"
+          },
+          {
+            "letra": "D",
+            "texto": "total() e write()",
+            "hash": "6ac6774fdfaa4f577a21309a"
+          },
+          {
+            "letra": "E",
+            "texto": "sizeof_array() e display()",
+            "hash": "6ac6774fdfaa4f577a21309b"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "(FUNRIO/2018) A figura abaixo ilustra uma sequência de instruções em PHP.\n\n<?php\n$x = 10;\n$y = 19;\n$z = 28\necho ++$x;\necho $y++;\necho --$z;\n?>\n\nAs instruções echo ++$x, echo $y++ e echo --$z apresentarão, respectivamente, os seguintes valores:\n10, 18 e 27.\n10, 19 e 28.\n11, 19 e 27.\n11, 18 e 28.\n11, 19 e 28.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "10, 18 e 27.",
+            "hash": "65ea06279d9df68481711015"
+          },
+          {
+            "letra": "B",
+            "texto": "10, 19 e 28.",
+            "hash": "65ea06279d9df68481711016"
+          },
+          {
+            "letra": "C",
+            "texto": "11, 19 e 27.",
+            "hash": "65ea06279d9df68481711017"
+          },
+          {
+            "letra": "D",
+            "texto": "11, 18 e 28.",
+            "hash": "65ea06279d9df68481711018"
+          },
+          {
+            "letra": "E",
+            "texto": "11, 19 e 28.",
+            "hash": "65ea06279d9df68481711019"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Integração do Php Com Banco de Dados",
+    "tema": "Tema 7",
+    "listaId": "00120",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "(Colégio Pedro II - 2016 - Colégio Pedro II - Professor - Ciência da Computação)\n\nO código de PHP abaixo insere dados em um banco de dados local MySQL, cujo usuário é root; a senha é mypsw e o nome do banco de dados, bdConcurso.\n\n<?php\n   $con = ______(“______”,”root”,”mypsw”,”______”);\n   if(mysqli_connect_errno()){\n      echo “Falha na conexão com MySQL: ”.mysqli_connect_error();\n   }\n   $sql = “INSERT INTO aluno (cpf, nome) VALUES (‘$_POST[cpf]’.’$_POST[firstname]’)”;\n   if(______($con.______)){\n      die(‘Error: ‘ .mysqli_error($con));\n   }\n   echo “1 registro adicionado”;\n   ______(______);\n?>\n\n\nConsidere as especificações do banco de dados e as variáveis fornecidas no código abaixo. Escolha a alternativa que completa corretamente o código.\nmysqli_select_db; localhost; bdConcurso; !mysqli_insert_db; $sql; mysqli_close; $con;\nmysqli_connect; localhost; bdConcurso; !mysqli_select_db; $sql; mysqli_close; $con;\nmysqli_connect; localhost; bdConcurso; !mysqli_query; $sql; mysqli_close; $con;\nmysqli_select_db; bdConcurso; localhost; !mysqli_query;$sql; mysqli_close; $sql;\nmysqli_connect; localhost; bdConcurso; !mysqli_query; $sql; close; $sql.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "mysqli_select_db; localhost; bdConcurso; !mysqli_insert_db; $sql; mysqli_close; $con;",
+            "hash": "65ea08c59f4d3400579207e1"
+          },
+          {
+            "letra": "B",
+            "texto": "mysqli_connect; localhost; bdConcurso; !mysqli_select_db; $sql; mysqli_close; $con;",
+            "hash": "65ea08c59f4d3400579207e2"
+          },
+          {
+            "letra": "C",
+            "texto": "mysqli_connect; localhost; bdConcurso; !mysqli_query; $sql; mysqli_close; $con;",
+            "hash": "65ea08c59f4d3400579207e3"
+          },
+          {
+            "letra": "D",
+            "texto": "mysqli_select_db; bdConcurso; localhost; !mysqli_query;$sql; mysqli_close; $sql;",
+            "hash": "65ea08c59f4d3400579207e4"
+          },
+          {
+            "letra": "E",
+            "texto": "mysqli_connect; localhost; bdConcurso; !mysqli_query; $sql; close; $sql.",
+            "hash": "65ea08c59f4d3400579207e5"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "(\n(FCC - 2013 - AL-RN - Técnico Legislativo - Programador)\nPara receber, em um arquivo PHP no servidor, os valores enviados em campos texto de um formulário HTML, utilizam-se variáveis predefinidas. Se o elemento form do formulário contiver method=\"get\", a variável utilizada será ..I.. . Caso contenha method=\"post\", a variável utilizada será ..II.. . Pode-se também utilizar a variável ..III.. que recebe os valores tanto se method=\"get\" quanto se method=\"post\".\n \nAs lacunas I, II e III da frase acima são preenchidas, correta e respectivamente, com:\nGET, POST e DATAREQUEST\ndoGet, doPost e processRequest\n$GET_DATA, $POST_DATA e $REQUEST_DATA\n$_DOGET, $_DOPOST e $_DOREQUEST\n$_GET, $_POST e $_REQUEST",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "GET, POST e DATAREQUEST",
+            "hash": "65ea1f7b3096d19817b6e3b9"
+          },
+          {
+            "letra": "B",
+            "texto": "doGet, doPost e processRequest",
+            "hash": "65ea1f7b3096d19817b6e3ba"
+          },
+          {
+            "letra": "C",
+            "texto": "$GET_DATA, $POST_DATA e $REQUEST_DATA",
+            "hash": "65ea1f7b3096d19817b6e3bb"
+          },
+          {
+            "letra": "D",
+            "texto": "$_DOGET, $_DOPOST e $_DOREQUEST",
+            "hash": "65ea1f7b3096d19817b6e3bc"
+          },
+          {
+            "letra": "E",
+            "texto": "$_GET, $_POST e $_REQUEST",
+            "hash": "65ea1f7b3096d19817b6e3bd"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "(FCC - 2017 - DPE-RS - Analista - Desenvolvimento de Sistemas)\n\nConsidere o fragmento de código abaixo, em um ambiente PHP em condições ideais.\n\n<?php\n   $dbh = new PDO(‘odbc:dados’, ‘rod167’, ‘a4BCz98’);\n   $linhas = ..I.. (“DELETE FROM dpers WHERE processo = ‘1234567’”);\n   print(“$Linhas linhas deletadas.\\n”);\n?>\n\n\nPara que o comando DELETE possa ser executado corretamente, a lacuna I deve ser preenchida com:\nself::$dbh->execute\n$dbh->update\n$dbh->exec\nPDO: :exec\nPDO: :query",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "self::$dbh->execute",
+            "hash": "65ea060c9d9df68481710975"
+          },
+          {
+            "letra": "B",
+            "texto": "$dbh->update",
+            "hash": "65ea060c9d9df68481710976"
+          },
+          {
+            "letra": "C",
+            "texto": "$dbh->exec",
+            "hash": "65ea060c9d9df68481710977"
+          },
+          {
+            "letra": "D",
+            "texto": "PDO: :exec",
+            "hash": "65ea060c9d9df68481710978"
+          },
+          {
+            "letra": "E",
+            "texto": "PDO: :query",
+            "hash": "65ea060c9d9df68481710979"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "(IFB - 2017 - IFB - Professor - Informática/ Desenvolvimento de Sistemas)\nSegundo Beighley e Morrison (2010), quando um formulário HTML envia dados a um script PHP, utiliza-se um conjunto de variáveis superglobais (superglobais são variáveis pré-definidas pelo interpretador PHP e que estão sempre disponíveis em todos os escopos) para acessar os dados enviados pelo formulário HTML. Assinale a alternativa que apresenta os identificadores/nomes de variáveis superglobais corretos para a tarefa de acessar dados enviados por um formulário HTML:\n$_FORM, $_HTTP\n$_GET, $_POST\n$_SUPER_GET, $_SUPER_POST\n$_FORM, $_RESPONSE\n$_SUPER_FORM, $_SUPER_HTTP",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "$_FORM, $_HTTP",
+            "hash": "65b139f655fefcc52fd660d7"
+          },
+          {
+            "letra": "B",
+            "texto": "$_GET, $_POST",
+            "hash": "65b139f655fefcc52fd660d8"
+          },
+          {
+            "letra": "C",
+            "texto": "$_SUPER_GET, $_SUPER_POST",
+            "hash": "65b139f655fefcc52fd660d9"
+          },
+          {
+            "letra": "D",
+            "texto": "$_FORM, $_RESPONSE",
+            "hash": "65b139f655fefcc52fd660da"
+          },
+          {
+            "letra": "E",
+            "texto": "$_SUPER_FORM, $_SUPER_HTTP",
+            "hash": "65b139f655fefcc52fd660db"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "(FADESP - 2017 - COSANPA - Analista de Sistema)\nA implementação correta de uma classe chamada Usuário em PHP é:\n<?php\nclass Usuario\n{\n    var $nome;\n    var $cpf;\n\n    public function __construct($nome, $cpf)\n    {\n        $this->nome = $nome;\n        $this->cpf = $cpf;\n    }\n}\n?>\n<?php\npublic class Usuario\n{\n        String nome; Int cpf;\n        public function __construct($nome, $cpf){\n               this->nome = nome;\n               this->cpf = cpf;\n        }\n}\n?>\n<?php\npublic class Usuario\n{\n        private String nome; private int cpf;\n        public Usuario(nome, cpf){\n               this->nome = nome;\n               this->cpf = cpf;\n        }\n}\n?>\n<?php\nclass Usuario\n{\n        var $nome; var $cpf;\n        public Usuario($nome, $cpf){\n               $this->nome = $nome;\n               $this->cpf = $cpf;\n        }\n}\n?>\n<?php\nclass Usuario\n{\n        var $nome; var $cpf;\n        Usuario($nome, $cpf){\n                $this->nome = $nome;\n                $this->cpf = $cpf;\n        }\n}\n?>",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "<?php\nclass Usuario\n{\n    var $nome;\n    var $cpf;\n\n    public function __construct($nome, $cpf)\n    {\n        $this->nome = $nome;\n        $this->cpf = $cpf;\n    }\n}\n?>",
+            "hash": "65ea06ae9d9df68481712155"
+          },
+          {
+            "letra": "B",
+            "texto": "<?php\npublic class Usuario\n{\n        String nome; Int cpf;\n        public function __construct($nome, $cpf){\n               this->nome = nome;\n               this->cpf = cpf;\n        }\n}\n?>",
+            "hash": "65ea06b09d9df68481712266"
+          },
+          {
+            "letra": "C",
+            "texto": "<?php\npublic class Usuario\n{\n        private String nome; private int cpf;\n        public Usuario(nome, cpf){\n               this->nome = nome;\n               this->cpf = cpf;\n        }\n}\n?>",
+            "hash": "65ea06b19d9df684817123f8"
+          },
+          {
+            "letra": "D",
+            "texto": "<?php\nclass Usuario\n{\n        var $nome; var $cpf;\n        public Usuario($nome, $cpf){\n               $this->nome = $nome;\n               $this->cpf = $cpf;\n        }\n}\n?>",
+            "hash": "65ea06b29d9df68481712452"
+          },
+          {
+            "letra": "E",
+            "texto": "<?php\nclass Usuario\n{\n        var $nome; var $cpf;\n        Usuario($nome, $cpf){\n                $this->nome = $nome;\n                $this->cpf = $cpf;\n        }\n}\n?>",
+            "hash": "65ea06b39d9df68481712461"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "(FUNDEP (Gestão de Concursos) - 2017 - CRM - MG - Analista de Sistema)\nQual é a forma correta de conectar o PHP a um banco de dados MySQL?\n$conecta = mysql(\"HOST\", \"LOGIN\", \"SENHA\") or print (mysql_error());\n$conecta = mysql_connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (mysql_error());\n$conecta = connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (error());\n$conecta = mysql_connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (error());\n$conecta = new MySQL(\"HOST\", \"LOGIN\", \"SENHA\") or die (Mysql->error());",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "$conecta = mysql(\"HOST\", \"LOGIN\", \"SENHA\") or print (mysql_error());",
+            "hash": "65c42fe14408bfa178820a47"
+          },
+          {
+            "letra": "B",
+            "texto": "$conecta = mysql_connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (mysql_error());",
+            "hash": "65c42fe14408bfa178820a48"
+          },
+          {
+            "letra": "C",
+            "texto": "$conecta = connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (error());",
+            "hash": "65c42fe14408bfa178820a49"
+          },
+          {
+            "letra": "D",
+            "texto": "$conecta = mysql_connect(\"HOST\", \"LOGIN\", \"SENHA\") or print (error());",
+            "hash": "65c42fe14408bfa178820a4a"
+          },
+          {
+            "letra": "E",
+            "texto": "$conecta = new MySQL(\"HOST\", \"LOGIN\", \"SENHA\") or die (Mysql->error());",
+            "hash": "65c42fe14408bfa178820a4b"
+          }
+        ]
+      }
+    ]
+  }
+]

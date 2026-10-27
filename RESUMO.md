@@ -6,12 +6,13 @@ Este documento descreve o fluxo completo para gerar resumos compactos (ficha de 
 
 ```
 resumos/
-└── firstPeriod/
+├── firstPeriod/                     ← matérias do 1º período (histórico)
+└── secondPeriod/                    ← matérias do 2º período (atual)
     ├── raw/
     │   ├── [disciplina].MD              ← conteúdo cru (bot salva aqui)
     │   ├── [disciplina]-exercicios.json ← exercícios extraídos (bot salva aqui)
     │   └── [disciplina]-respostas.json  ← respostas da IA (bot gera aqui)
-    └── [disciplina].MD                  ← resumo formatado (Hermes gera aqui)
+    └── [disciplina].MD                  ← resumo formatado (Ficha de Prova)
 ```
 
 ## Fluxo de Trabalho
@@ -29,8 +30,8 @@ O bot vai:
 - Converter HTML para Markdown
 - Aguardar timer de 15min por tema não concluído
 - Extrair exercícios com verificação de tempo (batch ou tema por tema)
-- **Salvar conteúdo cru em `resumos/firstPeriod/raw/[disciplina].MD`**
-- **Salvar exercícios em `resumos/firstPeriod/raw/[disciplina]-exercicios.json`**
+- **Salvar conteúdo cru em `resumos/secondPeriod/raw/[disciplina].MD`**
+- **Salvar exercícios em `resumos/secondPeriod/raw/[disciplina]-exercicios.json`**
 - **Chamar API NVIDIA diretamente para analisar exercícios**
 - **Gerar respostas automaticamente**
 - **Enviar respostas no site**
@@ -69,14 +70,14 @@ Onde:
 1. Identifique o nome da disciplina (ex: `introducao-a-programacao-de-computadores`)
 
 2. **Base do resumo** (ordem de prioridade):
-   - Verifique se existe o arquivo cru: `resumos/firstPeriod/raw/[disciplina].MD`
+   - Verifique se existe o arquivo cru: `resumos/secondPeriod/raw/[disciplina].MD`
      - Se existir → leia como base do resumo
      - Se NÃO existir → vá para o próximo passo
-   - Verifique se já existe um resumo: `resumos/firstPeriod/[disciplina].MD`
+   - Verifique se já existe um resumo: `resumos/secondPeriod/[disciplina].MD`
      - Se existir → leia como base (conteúdo já extraído em execução anterior)
      - Se NÃO existir → não há conteúdo para resumir, avise o usuário
 
-3. **Leia o JSON de exercícios**: `resumos/firstPeriod/raw/[disciplina]-exercicios.json`
+3. **Leia o JSON de exercícios**: `resumos/secondPeriod/raw/[disciplina]-exercicios.json`
    - Se existir → inclua os exercícios no resumo com enunciado, alternativas e resposta correta
    - Se NÃO existir → gere resumo apenas com conteúdo
 
@@ -85,7 +86,7 @@ Onde:
    - Bullet points com sintaxe inline (máx 8 por conceito)
    - Exercícios: enunciado em 1 linha + justificativa em 1 linha
 
-5. Salve o resumo em `resumos/firstPeriod/[disciplina].MD`
+5. Salve o resumo em `resumos/secondPeriod/[disciplina].MD`
    - Se criando do zero: write completo
    - Se atualizando (arquivo já existia): mantenha o conteúdo existente, adicione/atualize apenas a seção de exercícios
 

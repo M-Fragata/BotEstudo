@@ -1,0 +1,863 @@
+[
+  {
+    "titulo": "Lógica Digital",
+    "tema": "Tema 5",
+    "listaId": "00105",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "Assinale a alternativa que apresenta a sequência correta da saída (S) para a expressão lógica S = AB + C, quando os valores de entrada são:\nA = 010, B = 110 e C = 001.\nS = 010\nS = 011\nS = 100\nS = 101\nS = 110",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "S = 010",
+            "hash": "655731681d79f08685e81cb7"
+          },
+          {
+            "letra": "B",
+            "texto": "S = 011",
+            "hash": "655731681d79f08685e81cb8"
+          },
+          {
+            "letra": "C",
+            "texto": "S = 100",
+            "hash": "655731681d79f08685e81cb9"
+          },
+          {
+            "letra": "D",
+            "texto": "S = 101",
+            "hash": "655731681d79f08685e81cba"
+          },
+          {
+            "letra": "E",
+            "texto": "S = 110",
+            "hash": "655731681d79f08685e81cbb"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "Considere o operador lógico OR (OU) com duas entradas, A e B, e saída X. Em qual situação a saída X resultará no valor lógico 0 (FALSO)?\nSe pelo menos uma das entradas possuir valor 1.\nSe e somente se ambas as entradas, A e B, possuírem valor 0.\nQuando a entrada A for 1 e a entrada B for 0.\nQuando a entrada A for 0 e a entrada B for 1.\nSempre que as entradas apresentarem valores diferentes entre si.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Se pelo menos uma das entradas possuir valor 1.",
+            "hash": "6ac6735cf5d6d11d63b71ceb"
+          },
+          {
+            "letra": "B",
+            "texto": "Se e somente se ambas as entradas, A e B, possuírem valor 0.",
+            "hash": "6ac6735cf5d6d11d63b71cec"
+          },
+          {
+            "letra": "C",
+            "texto": "Quando a entrada A for 1 e a entrada B for 0.",
+            "hash": "6ac6735cf5d6d11d63b71ced"
+          },
+          {
+            "letra": "D",
+            "texto": "Quando a entrada A for 0 e a entrada B for 1.",
+            "hash": "6ac6735cf5d6d11d63b71cee"
+          },
+          {
+            "letra": "E",
+            "texto": "Sempre que as entradas apresentarem valores diferentes entre si.",
+            "hash": "6ac6735cf5d6d11d63b71cef"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "Em 1938, Claude Shannon propôs a aplicação da álgebra booleana para solucionar problemas relacionados a qual área da engenharia e tecnologia?\nTransmissão de sinais de rádio de longo alcance.\nProjeto e análise de circuitos com comutadores.\nConstrução de memórias magnéticas para mainframes.\nOtimização de compiladores em linguagens de alto nível.\nDesenvolvimento de fibras ópticas para redes de dados.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Transmissão de sinais de rádio de longo alcance.",
+            "hash": "6ac6735cf5d6d11d63b71cff"
+          },
+          {
+            "letra": "B",
+            "texto": "Projeto e análise de circuitos com comutadores.",
+            "hash": "6ac6735cf5d6d11d63b71d00"
+          },
+          {
+            "letra": "C",
+            "texto": "Construção de memórias magnéticas para mainframes.",
+            "hash": "6ac6735cf5d6d11d63b71d01"
+          },
+          {
+            "letra": "D",
+            "texto": "Otimização de compiladores em linguagens de alto nível.",
+            "hash": "6ac6735cf5d6d11d63b71d02"
+          },
+          {
+            "letra": "E",
+            "texto": "Desenvolvimento de fibras ópticas para redes de dados.",
+            "hash": "6ac6735cf5d6d11d63b71d03"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "Na avaliação de expressões booleanas sem parênteses, deve-se seguir uma ordem de precedência padronizada entre os operadores lógicos. Qual é a sequência correta de prioridade?\nOR primeiro, depois AND e por fim NOT.\nAND primeiro, depois OR e por fim NOT.\nNOT primeiro, depois OR e por fim AND.\nNOT primeiro, depois AND e por fim OR.\nXOR primeiro, depois NOT e por fim AND.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "OR primeiro, depois AND e por fim NOT.",
+            "hash": "6ac6735cf5d6d11d63b71ca5"
+          },
+          {
+            "letra": "B",
+            "texto": "AND primeiro, depois OR e por fim NOT.",
+            "hash": "6ac6735cf5d6d11d63b71ca6"
+          },
+          {
+            "letra": "C",
+            "texto": "NOT primeiro, depois OR e por fim AND.",
+            "hash": "6ac6735cf5d6d11d63b71ca7"
+          },
+          {
+            "letra": "D",
+            "texto": "NOT primeiro, depois AND e por fim OR.",
+            "hash": "6ac6735cf5d6d11d63b71ca8"
+          },
+          {
+            "letra": "E",
+            "texto": "XOR primeiro, depois NOT e por fim AND.",
+            "hash": "6ac6735cf5d6d11d63b71ca9"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Ana Carolina está adorando as aulas de Lógica Digital e tenta reproduzir em situações do cotidiano os conceitos aprendidos durante seus estudos. Recentemente, ela tentou reproduzir através de uma expressão booleana a seguinte situação hipotética: comprar legumes (A) e verduras (F), e ainda escolher entre carne (C) ou peixe (P). Qual das expressões melhor representa esta ação?\n(A . F) . (C + P)\nA . F . C + P\nA . F + (C +P)\n(A + F) . (C + P)\nA + F + C + P",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "(A . F) . (C + P)",
+            "hash": "65572f101d79f08685e8125c"
+          },
+          {
+            "letra": "B",
+            "texto": "A . F . C + P",
+            "hash": "65572f101d79f08685e8125d"
+          },
+          {
+            "letra": "C",
+            "texto": "A . F + (C +P)",
+            "hash": "65572f101d79f08685e8125e"
+          },
+          {
+            "letra": "D",
+            "texto": "(A + F) . (C + P)",
+            "hash": "65572f101d79f08685e8125f"
+          },
+          {
+            "letra": "E",
+            "texto": "A + F + C + P",
+            "hash": "65572f101d79f08685e81260"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "A tabela-verdade é um instrumento fundamental na análise de circuitos lógicos. Qual é a principal função de uma tabela-verdade em lógica digital?\nMedir a velocidade de propagação de pulsos elétricos entre portas lógicas.\nDescrever a saída de um circuito listando todas as combinações possíveis das variáveis de entrada e seus respectivos resultados.\nConverter números decimais diretamente em representações binárias sem uso de portas lógicas.\nDimensionar o consumo de energia e a dissipação térmica em circuitos integrados.\nSubstituir a representação gráfica de diagramas em blocos funcionais por diagramas elétricos analógicos.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Medir a velocidade de propagação de pulsos elétricos entre portas lógicas.",
+            "hash": "6ac6735cf5d6d11d63b71cc8"
+          },
+          {
+            "letra": "B",
+            "texto": "Descrever a saída de um circuito listando todas as combinações possíveis das variáveis de entrada e seus respectivos resultados.",
+            "hash": "6ac6735cf5d6d11d63b71cc9"
+          },
+          {
+            "letra": "C",
+            "texto": "Converter números decimais diretamente em representações binárias sem uso de portas lógicas.",
+            "hash": "6ac6735cf5d6d11d63b71cca"
+          },
+          {
+            "letra": "D",
+            "texto": "Dimensionar o consumo de energia e a dissipação térmica em circuitos integrados.",
+            "hash": "6ac6735cf5d6d11d63b71ccb"
+          },
+          {
+            "letra": "E",
+            "texto": "Substituir a representação gráfica de diagramas em blocos funcionais por diagramas elétricos analógicos.",
+            "hash": "6ac6735cf5d6d11d63b71ccc"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "A porta lógica XNOR é conhecida como a porta de coincidência. Qual é o comportamento de sua saída em relação às entradas A e B?\nProduz 1 quando as entradas forem diferentes entre si.\nProduz 1 se e somente se as entradas forem iguais (ambas 0 ou ambas 1).\nProduz 0 quando ambas as entradas forem 1.\nProduz 1 apenas quando a entrada A for maior que a entrada B.\nProduz 0 se e somente se ambas as entradas forem 0.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Produz 1 quando as entradas forem diferentes entre si.",
+            "hash": "6ac6735cf5d6d11d63b71cb4"
+          },
+          {
+            "letra": "B",
+            "texto": "Produz 1 se e somente se as entradas forem iguais (ambas 0 ou ambas 1).",
+            "hash": "6ac6735cf5d6d11d63b71cb5"
+          },
+          {
+            "letra": "C",
+            "texto": "Produz 0 quando ambas as entradas forem 1.",
+            "hash": "6ac6735cf5d6d11d63b71cb6"
+          },
+          {
+            "letra": "D",
+            "texto": "Produz 1 apenas quando a entrada A for maior que a entrada B.",
+            "hash": "6ac6735cf5d6d11d63b71cb7"
+          },
+          {
+            "letra": "E",
+            "texto": "Produz 0 se e somente se ambas as entradas forem 0.",
+            "hash": "6ac6735cf5d6d11d63b71cb8"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "A porta lógica AND (E) é amplamente utilizada para implementar condições de restrição simultânea. Qual das seguintes afirmações define corretamente a saída de uma porta AND de duas entradas?\nA saída será 1 se e somente se ambas as entradas forem 1.\nA saída será 1 se qualquer uma das entradas for 1.\nA saída será 0 se e somente se ambas as entradas forem 1.\nA saída será 1 apenas se as duas entradas tiverem valores diferentes.\nA saída será 0 apenas se ambas as entradas forem 0.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "A saída será 1 se e somente se ambas as entradas forem 1.",
+            "hash": "6ac6735cf5d6d11d63b71cf0"
+          },
+          {
+            "letra": "B",
+            "texto": "A saída será 1 se qualquer uma das entradas for 1.",
+            "hash": "6ac6735cf5d6d11d63b71cf1"
+          },
+          {
+            "letra": "C",
+            "texto": "A saída será 0 se e somente se ambas as entradas forem 1.",
+            "hash": "6ac6735cf5d6d11d63b71cf2"
+          },
+          {
+            "letra": "D",
+            "texto": "A saída será 1 apenas se as duas entradas tiverem valores diferentes.",
+            "hash": "6ac6735cf5d6d11d63b71cf3"
+          },
+          {
+            "letra": "E",
+            "texto": "A saída será 0 apenas se ambas as entradas forem 0.",
+            "hash": "6ac6735cf5d6d11d63b71cf4"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "Segundo as regras básicas da álgebra booleana, qual lei fundamental afirma que A + 0 = A e A · 1 = A?\nLei da Absorção.\nLei do Complemento.\nLei da Identidade.\nLei da Involução.\nLei do Elemento Nulo.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Lei da Absorção.",
+            "hash": "6ac6735cf5d6d11d63b71ccd"
+          },
+          {
+            "letra": "B",
+            "texto": "Lei do Complemento.",
+            "hash": "6ac6735cf5d6d11d63b71cce"
+          },
+          {
+            "letra": "C",
+            "texto": "Lei da Identidade.",
+            "hash": "6ac6735cf5d6d11d63b71ccf"
+          },
+          {
+            "letra": "D",
+            "texto": "Lei da Involução.",
+            "hash": "6ac6735cf5d6d11d63b71cd0"
+          },
+          {
+            "letra": "E",
+            "texto": "Lei do Elemento Nulo.",
+            "hash": "6ac6735cf5d6d11d63b71cd1"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "Na lógica digital e nos circuitos eletrônicos, os estados binários 0 e 1 são representados por faixas de tensão predefinidas. De acordo com o material, como os bits 0 e 1 podem ser comparados às posições de um interruptor elétrico?\nO bit 0 representa o estado ligado (tensão alta) e o bit 1 representa o estado desligado (tensão baixa).\nO bit 0 representa o estado desligado (tensão baixa) e o bit 1 representa o estado ligado (tensão alta).\nO bit 0 indica circuito aberto com tensão alta e o bit 1 indica circuito fechado com tensão nula.\nAmbos os bits representam estados alternados de corrente contínua independentes do nível de tensão.\nO bit 0 representa tensão intermediária e o bit 1 representa ausência total de sinal elétrico.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "O bit 0 representa o estado ligado (tensão alta) e o bit 1 representa o estado desligado (tensão baixa).",
+            "hash": "6ac6735cf5d6d11d63b71cdc"
+          },
+          {
+            "letra": "B",
+            "texto": "O bit 0 representa o estado desligado (tensão baixa) e o bit 1 representa o estado ligado (tensão alta).",
+            "hash": "6ac6735cf5d6d11d63b71cdd"
+          },
+          {
+            "letra": "C",
+            "texto": "O bit 0 indica circuito aberto com tensão alta e o bit 1 indica circuito fechado com tensão nula.",
+            "hash": "6ac6735cf5d6d11d63b71cde"
+          },
+          {
+            "letra": "D",
+            "texto": "Ambos os bits representam estados alternados de corrente contínua independentes do nível de tensão.",
+            "hash": "6ac6735cf5d6d11d63b71cdf"
+          },
+          {
+            "letra": "E",
+            "texto": "O bit 0 representa tensão intermediária e o bit 1 representa ausência total de sinal elétrico.",
+            "hash": "6ac6735cf5d6d11d63b71ce0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Processamento em Paralelo",
+    "tema": "Tema 6",
+    "listaId": "00394",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "Uma empresa de tecnologia desenvolveu um novo processador com foco em eficiência energética. Eles implementaram uma arquitetura multicore otimizada para processamento paralelo, esperando aumentar o desempenho sem sacrificar a autonomia da bateria em dispositivos móveis.\n\nQual é o principal benefício desta arquitetura multicore no contexto de processamento paralelo para dispositivos móveis?\nRedução significativa no tamanho físico do processador.\nAumento da capacidade de armazenamento de dados.\nMelhoria na eficiência energética e desempenho.\nExpansão da banda de rede para comunicação mais rápida.\nIntegração de gráficos avançados e realidade aumentada.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Redução significativa no tamanho físico do processador.",
+            "hash": "65f8a79f1686e436959b1904"
+          },
+          {
+            "letra": "B",
+            "texto": "Aumento da capacidade de armazenamento de dados.",
+            "hash": "65f8a79f1686e436959b1905"
+          },
+          {
+            "letra": "C",
+            "texto": "Melhoria na eficiência energética e desempenho.",
+            "hash": "65f8a79f1686e436959b1906"
+          },
+          {
+            "letra": "D",
+            "texto": "Expansão da banda de rede para comunicação mais rápida.",
+            "hash": "65f8a79f1686e436959b1907"
+          },
+          {
+            "letra": "E",
+            "texto": "Integração de gráficos avançados e realidade aumentada.",
+            "hash": "65f8a79f1686e436959b1908"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "Ao analisar uma arquitetura de processadores superescalares, podemos citar algumas das suas principais características:\nI - Possibilita a execução de instruções em pipelines paralelos.\nII - Pipelines paralelos são possíveis replicando unidades funcionais.\nIII - Utilizam uma combinação de otimização de compiladores e técnicas de hardware para aumentar o nível de paralelismo.\nAssinale a alternativa que indica qual ou quais das afirmações acima estão corretas:\nApenas a afirmação I.\nApenas a afirmação III.\nApenas as afirmações I e II.\nApenas as afirmações II e III.\nAs afirmações I, II e III.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Apenas a afirmação I.",
+            "hash": "6557331c1d79f08685e82448"
+          },
+          {
+            "letra": "B",
+            "texto": "Apenas a afirmação III.",
+            "hash": "6557331c1d79f08685e82449"
+          },
+          {
+            "letra": "C",
+            "texto": "Apenas as afirmações I e II.",
+            "hash": "6557331c1d79f08685e8244a"
+          },
+          {
+            "letra": "D",
+            "texto": "Apenas as afirmações II e III.",
+            "hash": "6557331c1d79f08685e8244b"
+          },
+          {
+            "letra": "E",
+            "texto": "As afirmações I, II e III.",
+            "hash": "6557331c1d79f08685e8244c"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "A Taxonomia de Flynn é uma classificação para arquiteturas de computadores proposta por Michael J. Flynn em 1966. Essa taxonomia é usada para categorizar os sistemas de computação com base no número de instruções e dados que podem ser processados simultaneamente.\n\n \n\nQual das seguintes categorias da taxonomia de Flynn é considerada principalmente teórica, com pouca ou nenhuma implementação prática?\nSISD.\nSIMD.\nMISD.\nMIMD.\nSMP.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "SISD.",
+            "hash": "654be6dab5168ccb7467d337"
+          },
+          {
+            "letra": "B",
+            "texto": "SIMD.",
+            "hash": "654be6dab5168ccb7467d338"
+          },
+          {
+            "letra": "C",
+            "texto": "MISD.",
+            "hash": "654be6dab5168ccb7467d339"
+          },
+          {
+            "letra": "D",
+            "texto": "MIMD.",
+            "hash": "654be6dab5168ccb7467d33a"
+          },
+          {
+            "letra": "E",
+            "texto": "SMP.",
+            "hash": "654be6dab5168ccb7467d33b"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "Uma equipe de desenvolvimento está analisando a Taxonomia de Flynn para escolher a arquitetura mais adequada para seu novo software de análise de dados. Eles precisam de um sistema que execute a mesma operação em múltiplos conjuntos de dados simultaneamente.\nSISD seria a escolha ideal para essa necessidade.\nMISD é mais adequado para operações em múltiplos conjuntos de dados.\nSIMD atende a necessidade de operações paralelas em múltiplos dados.\nMIMD é otimizado para executar a mesma operação em dados diferentes.\nSMP não se aplica à classificação de Flynn, sendo inadequado aqui.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "SISD seria a escolha ideal para essa necessidade.",
+            "hash": "65f89a2b1686e436959a34ef"
+          },
+          {
+            "letra": "B",
+            "texto": "MISD é mais adequado para operações em múltiplos conjuntos de dados.",
+            "hash": "65f89a2b1686e436959a34f0"
+          },
+          {
+            "letra": "C",
+            "texto": "SIMD atende a necessidade de operações paralelas em múltiplos dados.",
+            "hash": "65f89a2b1686e436959a34f1"
+          },
+          {
+            "letra": "D",
+            "texto": "MIMD é otimizado para executar a mesma operação em dados diferentes.",
+            "hash": "65f89a2b1686e436959a34f2"
+          },
+          {
+            "letra": "E",
+            "texto": "SMP não se aplica à classificação de Flynn, sendo inadequado aqui.",
+            "hash": "65f89a2b1686e436959a34f3"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Um artigo recente analisou as diferenças entre processamento superescalar e superpipeline em CPUs. O foco estava em como cada abordagem melhora o desempenho do processamento paralelo e a eficiência na execução de instruções.\n\nQual é a principal vantagem do processamento superescalar em comparação com o superpipeline?\nAumenta a velocidade do clock do processador.\nExecuta várias instruções simultaneamente em diferentes núcleos.\nUtiliza um único núcleo para processar instruções sequenciais rapidamente.\nReduz a complexidade do design do processador.\nDiminui o consumo de energia por instrução processada.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Aumenta a velocidade do clock do processador.",
+            "hash": "65f89fae1686e436959a9fe4"
+          },
+          {
+            "letra": "B",
+            "texto": "Executa várias instruções simultaneamente em diferentes núcleos.",
+            "hash": "65f89fae1686e436959a9fe5"
+          },
+          {
+            "letra": "C",
+            "texto": "Utiliza um único núcleo para processar instruções sequenciais rapidamente.",
+            "hash": "65f89fae1686e436959a9fe6"
+          },
+          {
+            "letra": "D",
+            "texto": "Reduz a complexidade do design do processador.",
+            "hash": "65f89fae1686e436959a9fe7"
+          },
+          {
+            "letra": "E",
+            "texto": "Diminui o consumo de energia por instrução processada.",
+            "hash": "65f89fae1686e436959a9fe8"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "Uma universidade está projetando um supercomputador para pesquisa científica. O foco está na análise de grandes conjuntos de dados biológicos. A decisão crucial é entre implementar uma arquitetura SIMD ou MIMD, considerando a necessidade de processar grandes volumes de dados de forma eficiente.\n\nQual arquitetura de processador é mais adequada para o supercomputador da universidade, focado em análise de grandes conjuntos de dados?\nArquitetura MIMD, pois permite diferentes instruções em múltiplos conjuntos de dados.\nArquitetura SIMD, ideal para aplicar a mesma instrução em múltiplos conjuntos de dados.\nArquitetura SISD, por sua simplicidade e eficiência em tarefas sequenciais.\nArquitetura multicore sem SMT, para melhor desempenho individual dos núcleos.\nArquitetura SMP, para otimizar o compartilhamento de memória entre processadores.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Arquitetura MIMD, pois permite diferentes instruções em múltiplos conjuntos de dados.",
+            "hash": "65f8a0651686e436959aa8cf"
+          },
+          {
+            "letra": "B",
+            "texto": "Arquitetura SIMD, ideal para aplicar a mesma instrução em múltiplos conjuntos de dados.",
+            "hash": "65f8a0651686e436959aa8d0"
+          },
+          {
+            "letra": "C",
+            "texto": "Arquitetura SISD, por sua simplicidade e eficiência em tarefas sequenciais.",
+            "hash": "65f8a0651686e436959aa8d1"
+          },
+          {
+            "letra": "D",
+            "texto": "Arquitetura multicore sem SMT, para melhor desempenho individual dos núcleos.",
+            "hash": "65f8a0651686e436959aa8d2"
+          },
+          {
+            "letra": "E",
+            "texto": "Arquitetura SMP, para otimizar o compartilhamento de memória entre processadores.",
+            "hash": "65f8a0651686e436959aa8d3"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "Uma universidade está configurando um novo laboratório de pesquisa com sistemas multiprocessadores. O foco é na análise de protocolos de coerência de cache para manter a consistência de dados entre caches de diferentes processadores.\n\nQual das opções abaixo mostra uma característica da coerência de cache?\nProtocolos de coerência são irrelevantes em sistemas multiprocessadores.\nCoerência de cache refere-se à capacidade de armazenamento do cache.\nOs protocolos garantem que cada processador tenha seu próprio cache isolado.\nProtocolos de coerência de cache asseguram a consistência dos dados entre caches.\nCoerência de cache aumenta a latência de acesso à memória principal.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Protocolos de coerência são irrelevantes em sistemas multiprocessadores.",
+            "hash": "65f89daf1686e436959a8a12"
+          },
+          {
+            "letra": "B",
+            "texto": "Coerência de cache refere-se à capacidade de armazenamento do cache.",
+            "hash": "65f89daf1686e436959a8a13"
+          },
+          {
+            "letra": "C",
+            "texto": "Os protocolos garantem que cada processador tenha seu próprio cache isolado.",
+            "hash": "65f89daf1686e436959a8a14"
+          },
+          {
+            "letra": "D",
+            "texto": "Protocolos de coerência de cache asseguram a consistência dos dados entre caches.",
+            "hash": "65f89daf1686e436959a8a15"
+          },
+          {
+            "letra": "E",
+            "texto": "Coerência de cache aumenta a latência de acesso à memória principal.",
+            "hash": "65f89daf1686e436959a8a16"
+          }
+        ]
+      },
+      {
+        "numero": 8,
+        "enunciado": "Em uma empresa de tecnologia, um novo processador está sendo desenvolvido. Este processador utiliza uma técnica avançada que permite sobrepor operações de leitura e execução, melhorando a eficiência geral do sistema. A equipe de engenheiros está otimizando essa técnica para aumentar a velocidade de processamento.\n\nConsiderando o texto, analise as afirmativas abaixo:\n\nI. A técnica utilizada pelo processador é conhecida como pipelining.\n\nII. O pipelining reduz a eficiência do processador ao aumentar a complexidade do hardware.\n\nIII. A sobreposição de operações no pipelining acelera o processamento de dados.\nApenas a afirmativa I está correta.\nApenas as afirmativas I e III estão corretas.\nApenas as afirmativas II e III estão corretas.\nApenas a afirmativa III está correta.\nApenas as afirmativas I e II estão corretas.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Apenas a afirmativa I está correta.",
+            "hash": "65f8aaa41686e436959b51e4"
+          },
+          {
+            "letra": "B",
+            "texto": "Apenas as afirmativas I e III estão corretas.",
+            "hash": "65f8aaa41686e436959b51e5"
+          },
+          {
+            "letra": "C",
+            "texto": "Apenas as afirmativas II e III estão corretas.",
+            "hash": "65f8aaa41686e436959b51e6"
+          },
+          {
+            "letra": "D",
+            "texto": "Apenas a afirmativa III está correta.",
+            "hash": "65f8aaa41686e436959b51e7"
+          },
+          {
+            "letra": "E",
+            "texto": "Apenas as afirmativas I e II estão corretas.",
+            "hash": "65f8aaa41686e436959b51e8"
+          }
+        ]
+      },
+      {
+        "numero": 9,
+        "enunciado": "Uma empresa de desenvolvimento de software está considerando a implementação de processadores vetoriais em seu novo sistema de análise de dados. Eles estão avaliando como essa abordagem pode otimizar o processamento de grandes conjuntos de dados.\n\nQual é a principal vantagem dos processadores vetoriais no processamento de dados?\nRedução do Consumo de Energia.\nAumento da Velocidade de Acesso à Internet.\nMelhoria na Eficiência de Processamento de Dados.\nFacilitação na Interação com Interfaces Gráficas.\nExpansão da Capacidade de Armazenamento de Dados.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Redução do Consumo de Energia.",
+            "hash": "65f8997c1686e436959a2224"
+          },
+          {
+            "letra": "B",
+            "texto": "Aumento da Velocidade de Acesso à Internet.",
+            "hash": "65f8997c1686e436959a2225"
+          },
+          {
+            "letra": "C",
+            "texto": "Melhoria na Eficiência de Processamento de Dados.",
+            "hash": "65f8997c1686e436959a2226"
+          },
+          {
+            "letra": "D",
+            "texto": "Facilitação na Interação com Interfaces Gráficas.",
+            "hash": "65f8997c1686e436959a2227"
+          },
+          {
+            "letra": "E",
+            "texto": "Expansão da Capacidade de Armazenamento de Dados.",
+            "hash": "65f8997c1686e436959a2228"
+          }
+        ]
+      },
+      {
+        "numero": 10,
+        "enunciado": "Processadores superescalares são microprocessadores que implementam um tipo de paralelismo a nível de instrução (ILP - Instruction Level Parallelism) dentro de um único processador. Em outras palavras, eles têm a capacidade de executar mais de uma instrução durante um único ciclo de clock.\n\n \n\nQual das seguintes opções é uma característica dos processadores superescalares?\nIncapacidade de executar instruções de forma independente.\nExecução sequencial estrita das instruções.\nDependência de um único pipeline para todas as operações.\nExecução de instruções de forma independente e possivelmente fora de ordem.\nUso exclusivo em computadores mainframe.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Incapacidade de executar instruções de forma independente.",
+            "hash": "654be6dab5168ccb7467d32b"
+          },
+          {
+            "letra": "B",
+            "texto": "Execução sequencial estrita das instruções.",
+            "hash": "654be6dab5168ccb7467d32c"
+          },
+          {
+            "letra": "C",
+            "texto": "Dependência de um único pipeline para todas as operações.",
+            "hash": "654be6dab5168ccb7467d32d"
+          },
+          {
+            "letra": "D",
+            "texto": "Execução de instruções de forma independente e possivelmente fora de ordem.",
+            "hash": "654be6dab5168ccb7467d32e"
+          },
+          {
+            "letra": "E",
+            "texto": "Uso exclusivo em computadores mainframe.",
+            "hash": "654be6dab5168ccb7467d32f"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Arquitetura Cisc X Risc",
+    "tema": "Tema 7",
+    "listaId": "00436",
+    "status": "Pendente",
+    "questoes": [
+      {
+        "numero": 1,
+        "enunciado": "No contexto de arquitetura e organização de computadores, todo processador é construído de modo a ser capaz de realizar instruções básicas como somar, multiplicar, subtrair ou dividir números. Em relação à arquitetura CISC, selecione a afirmação correta dentre as seguintes:\nUma das principais vantagens da abordagem CISC é a intensa operação nos registradores, acelerando a execução das instruções.\nO endereçamento múltiplo traz flexibilidade, permitindo operações diretamente em operandos na memória principal, além dos presentes nos registradores.\nA grande quantidade de instruções facilita o processo de decodificação pela unidade de controle.\nAs características de processadores CISC, como a grande quantidade de registradores, faz com que esses processadores sejam ideais para smartphones e equipamentos similares.\nUm processador CISC possui uma unidade de controle leve e rápida, permitindo um rápido fluxo de dados através do pipeline.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Uma das principais vantagens da abordagem CISC é a intensa operação nos registradores, acelerando a execução das instruções.",
+            "hash": "655735651d79f08685e82e7f"
+          },
+          {
+            "letra": "B",
+            "texto": "O endereçamento múltiplo traz flexibilidade, permitindo operações diretamente em operandos na memória principal, além dos presentes nos registradores.",
+            "hash": "655735651d79f08685e82e80"
+          },
+          {
+            "letra": "C",
+            "texto": "A grande quantidade de instruções facilita o processo de decodificação pela unidade de controle.",
+            "hash": "655735651d79f08685e82e81"
+          },
+          {
+            "letra": "D",
+            "texto": "As características de processadores CISC, como a grande quantidade de registradores, faz com que esses processadores sejam ideais para smartphones e equipamentos similares.",
+            "hash": "655735651d79f08685e82e82"
+          },
+          {
+            "letra": "E",
+            "texto": "Um processador CISC possui uma unidade de controle leve e rápida, permitindo um rápido fluxo de dados através do pipeline.",
+            "hash": "655735651d79f08685e82e83"
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "enunciado": "Selecione o processador que segue a arquitetura RISC dentre os processadores teóricos cujas especificações técnicas são apresentadas a seguir:\nProcessador A: 16 registradores, 30 instruções de 2 a 4 bytes de tamanho.\nProcessador B: 8 registradores, 128 instruções de 4 a 7 bytes de tamanho.\nProcessador C: 8 registradores, 32 instruções de 2 a 5 bytes de tamanho.\nProcessador D: 16 registradores, 30 instruções de 4 bytes de tamanho.\nProcessador E: 4 registradores, 64 instruções de 2 a 4 bytes de tamanho.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Processador A: 16 registradores, 30 instruções de 2 a 4 bytes de tamanho.",
+            "hash": "6557314a1d79f08685e81c2d"
+          },
+          {
+            "letra": "B",
+            "texto": "Processador B: 8 registradores, 128 instruções de 4 a 7 bytes de tamanho.",
+            "hash": "6557314a1d79f08685e81c2e"
+          },
+          {
+            "letra": "C",
+            "texto": "Processador C: 8 registradores, 32 instruções de 2 a 5 bytes de tamanho.",
+            "hash": "6557314a1d79f08685e81c2f"
+          },
+          {
+            "letra": "D",
+            "texto": "Processador D: 16 registradores, 30 instruções de 4 bytes de tamanho.",
+            "hash": "6557314a1d79f08685e81c30"
+          },
+          {
+            "letra": "E",
+            "texto": "Processador E: 4 registradores, 64 instruções de 2 a 4 bytes de tamanho.",
+            "hash": "6557314a1d79f08685e81c31"
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "enunciado": "A arquitetura de instruções de um computador, frequentemente abreviada como ISA (do inglês \"Instruction Set Architecture\"), é uma parte fundamental que define a estrutura e o funcionamento de um sistema de computador. É uma interface que descreve as operações, a organização de dados, a memória e outras características funcionais de um processador, como as instruções que o processador pode executar.\n\n \n\nQual das seguintes afirmações melhor descreve a filosofia de design por trás da arquitetura RISC?\nRISC utiliza um conjunto de instruções complexo para minimizar o número de ciclos de clock por instrução.\nRISC depende fortemente da microprogramação para executar instruções.\nRISC emprega um conjunto de instruções pequeno e altamente otimizado.\nRISC prioriza um número maior de instruções que podem levar vários ciclos de clock para serem executadas.\nRISC usa mais ciclos de clock por instrução com mais funções por instrução.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "RISC utiliza um conjunto de instruções complexo para minimizar o número de ciclos de clock por instrução.",
+            "hash": "654be6deb5168ccb7467d549"
+          },
+          {
+            "letra": "B",
+            "texto": "RISC depende fortemente da microprogramação para executar instruções.",
+            "hash": "654be6deb5168ccb7467d54a"
+          },
+          {
+            "letra": "C",
+            "texto": "RISC emprega um conjunto de instruções pequeno e altamente otimizado.",
+            "hash": "654be6deb5168ccb7467d54b"
+          },
+          {
+            "letra": "D",
+            "texto": "RISC prioriza um número maior de instruções que podem levar vários ciclos de clock para serem executadas.",
+            "hash": "654be6deb5168ccb7467d54c"
+          },
+          {
+            "letra": "E",
+            "texto": "RISC usa mais ciclos de clock por instrução com mais funções por instrução.",
+            "hash": "654be6deb5168ccb7467d54d"
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "enunciado": "A execução de uma instrução de máquina passa por várias etapas e saber identificar as características e propriedades da arquitetura CISC e RISC é fundamental para embasar uma decisão de escolha. Em uma comparação inicial dessas duas arquiteturas, podemos afirmar que:\nA arquitetura RISC provê mais instruções.\nA arquitetura CISC tem um pipeline mais eficiente.\nAs operações de ambas visam sempre acesso à memória.\nA arquitetura RISC utiliza microprograma para decodificar instruções.\nO maior número de registradores está na arquitetura RISC.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "A arquitetura RISC provê mais instruções.",
+            "hash": "655731251d79f08685e81b8b"
+          },
+          {
+            "letra": "B",
+            "texto": "A arquitetura CISC tem um pipeline mais eficiente.",
+            "hash": "655731251d79f08685e81b8c"
+          },
+          {
+            "letra": "C",
+            "texto": "As operações de ambas visam sempre acesso à memória.",
+            "hash": "655731251d79f08685e81b8d"
+          },
+          {
+            "letra": "D",
+            "texto": "A arquitetura RISC utiliza microprograma para decodificar instruções.",
+            "hash": "655731251d79f08685e81b8e"
+          },
+          {
+            "letra": "E",
+            "texto": "O maior número de registradores está na arquitetura RISC.",
+            "hash": "655731251d79f08685e81b8f"
+          }
+        ]
+      },
+      {
+        "numero": 5,
+        "enunciado": "Em relação à arquitetura CISC, selecione a afirmação correta dentre as seguintes:\nUma das principais vantagens da abordagem CISC é a intensa operação nos registradores, acelerando a execução das instruções.\nO endereçamento múltiplo traz flexibilidade, permitindo operações diretamente em operandos na memória principal, além dos presentes nos registradores.\nA grande quantidade de instruções facilita o processo de decodificação pela unidade de controle.\nAs características de processadores CISC, como a grande quantidade de registradores, faz com que esses processadores sejam ideais para smartphones e equipamentos similares.\nUm processador CISC possui uma unidade de controle leve e rápida, permitindo um rápido fluxo de dados através do pipeline.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Uma das principais vantagens da abordagem CISC é a intensa operação nos registradores, acelerando a execução das instruções.",
+            "hash": "652e7079d2cc53390d813007"
+          },
+          {
+            "letra": "B",
+            "texto": "O endereçamento múltiplo traz flexibilidade, permitindo operações diretamente em operandos na memória principal, além dos presentes nos registradores.",
+            "hash": "652e7079d2cc53390d813008"
+          },
+          {
+            "letra": "C",
+            "texto": "A grande quantidade de instruções facilita o processo de decodificação pela unidade de controle.",
+            "hash": "652e7079d2cc53390d813009"
+          },
+          {
+            "letra": "D",
+            "texto": "As características de processadores CISC, como a grande quantidade de registradores, faz com que esses processadores sejam ideais para smartphones e equipamentos similares.",
+            "hash": "652e7079d2cc53390d81300a"
+          },
+          {
+            "letra": "E",
+            "texto": "Um processador CISC possui uma unidade de controle leve e rápida, permitindo um rápido fluxo de dados através do pipeline.",
+            "hash": "652e7079d2cc53390d81300b"
+          }
+        ]
+      },
+      {
+        "numero": 6,
+        "enunciado": "O surgimento de processadores com arquitetura RISC foi fundamental para o desenvolvimento de smartphones, tablets, \"smartwatches\" entre muitos outros.\nCom a restrição de espaço para construir esses equipamentos, a abordagem RISC foi fundamental pois:\nTem um conjunto amplo de instruções, facilitando a programação dos equipamentos.\nPriorizava execução em registradores, aumentando a eficiência dos programas.\nDiminui o uso de memória, priorizando o disco rígido.\nPermite o uso de SSD, acelerando a busca de dados.\nPossui integração com tecnologia sem fio, possibilitando a plena conexão à internet.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Tem um conjunto amplo de instruções, facilitando a programação dos equipamentos.",
+            "hash": "655730851d79f08685e818be"
+          },
+          {
+            "letra": "B",
+            "texto": "Priorizava execução em registradores, aumentando a eficiência dos programas.",
+            "hash": "655730851d79f08685e818bf"
+          },
+          {
+            "letra": "C",
+            "texto": "Diminui o uso de memória, priorizando o disco rígido.",
+            "hash": "655730851d79f08685e818c0"
+          },
+          {
+            "letra": "D",
+            "texto": "Permite o uso de SSD, acelerando a busca de dados.",
+            "hash": "655730851d79f08685e818c1"
+          },
+          {
+            "letra": "E",
+            "texto": "Possui integração com tecnologia sem fio, possibilitando a plena conexão à internet.",
+            "hash": "655730851d79f08685e818c2"
+          }
+        ]
+      },
+      {
+        "numero": 7,
+        "enunciado": "O espaço existente em um processador é restrito, e o seu uso é definido, em grande parte, pela arquitetura na qual ele se baseia.\nConsiderando um processador RISC e um CISC, as suas prioridades de espaço são, respectivamente (baseadas nas arquiteturas):\nRegistradores de uso específico e registradores de uso geral.\nPipeline e registradores de uso específico.\nUnidade de controle e pipeline.\nRegistradores de uso geral e unidade de controle.\nMemória cache e registradores de uso geral.",
+        "alternativas": [
+          {
+            "letra": "A",
+            "texto": "Registradores de uso específico e registradores de uso geral.",
+            "hash": "6599a0e89c20b9363483bb4b"
+          },
+          {
+            "letra": "B",
+            "texto": "Pipeline e registradores de uso específico.",
+            "hash": "6599a0e89c20b9363483bb4c"
+          },
+          {
+            "letra": "C",
+            "texto": "Unidade de controle e pipeline.",
+            "hash": "6599a0e89c20b9363483bb4d"
+          },
+          {
+            "letra": "D",
+            "texto": "Registradores de uso geral e unidade de controle.",
+            "hash": "6599a0e89c20b9363483bb4e"
+          },
+          {
+            "letra": "E",
+            "texto": "Memória cache e registradores de uso geral.",
+            "hash": "6599a0e89c20b9363483bb4f"
+          }
+        ]
+      }
+    ]
+  }
+]
